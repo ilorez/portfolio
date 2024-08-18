@@ -1,30 +1,117 @@
 import Image from 'next/image';
-import { Github } from 'lucide-react';
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
+import my_profile_image from '/public/znajdaou.jpg';
+import bg_image from '/public/background.jpg';
+import { Github, Discord,Facebook, Instagram, Linkedin,Stackoverflow, Twitter } from '../Icons';
+
+const socials = [
+  {
+    name: 'github',
+    link: 'https://github.com/ilorez',
+    icon: Github,
+  },
+  {
+    name: 'linkedin',
+    link: 'https://www.linkedin.com/in/zobair-najdaoui-7b7b6b1b2/',
+    icon: Linkedin,
+  },
+  {
+    name: 'twitter',
+    link: 'https://twitter.com/zobair_najdaoui',
+    icon: Twitter,
+  },
+  {
+    name: 'stackoverflow',
+    link: 'https://stackoverflow.com/users/14309191/zobair-najdaoui',
+    icon: Stackoverflow,
+  },
+  {
+    name: 'instagram',
+    link: 'https://www.instagram.com/zobair_najdaoui/',
+    icon: Instagram,
+  },
+  {
+    name: 'facebook',
+    link: 'https://www.facebook.com/zobair.najdaoui',
+    icon: Facebook,
+  },
+  {
+    name: 'discord',
+    link: 'https://discord.gg/8HvX7sZ',
+    icon: Discord,
+  },
+];
 
 export default function Header() {
   return (
-    <div className="">
-      <div>
+    <div
+      style={{
+        backgroundImage: `url(${bg_image.src})`
+      }}
+      className="h-[75vh] relative bg-cover bg-center p-0 m-0 text-card dark:text-card-foreground"
+    >
+      <div className="w-full h-full flex   justify-center items-center bg-black bg-opacity-60">
         <div>
           <span>Najdaoui Zobair</span>
           <span>Full-Stack Developer</span>
         </div>
         <div>
-          <div>{/* image */}</div>
+          <div>
+            <Avatar className="w-[200px] h-auto">
+              <AvatarImage src={my_profile_image.src} alt="zobair najdaoui" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </div>
           <div>
             {/* links */}
-            <ul>
-              {/* github */}
-              <li>
-                <a href="https://github.com/ilorez" target="_blank">
-                <Github />                  
-                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                </a>
-              </li>
+            <ul className="flex gap-2">
+              {socials.map((social) => (
+                <li key={social.name}>
+                  {/* // make svg white */}
+                  <a
+                    href={social.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="[&>svg]:fill-white"
+
+                  >
+                    <social.icon size='25' />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+{
+  /* <header
+      style={{
+        backgroundImage: `url(${src})`,
+      }}
+      className="h-[75vh] relative bg-cover bg-center p-0 m-0 text-card dark:text-card-foreground"
+    >
+      <div className="w-full h-full flex   justify-center items-center backdrop-brightness-50">
+        <Hero
+          subtitle="Welcome to our football haven, where every goal, tackle, and victory finds its home. Get ready to dive into the thrilling world of football with us!"
+          title={title}
+        />
+        <div
+          className=" max-w-[400px] 
+        ml-10 h-full 
+        bg-[url('/flishOfppt.svg')] 
+        
+        bg-cover bg-left  overflow-visible
+        w-full 
+        hidden sm:flex items-center justify-center
+        "
+        >
+        </div>
+      </div>
+    </header> */
 }
