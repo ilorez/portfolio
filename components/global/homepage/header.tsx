@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import my_profile_image from '/public/znajdaou.jpg';
 import bg_image from '/public/background.jpg';
 import { Github, Discord,Facebook, Instagram, Linkedin,Stackoverflow, Twitter } from '../Icons';
+import { Mouse } from 'lucide-react';
 
 const socials = [
   {
@@ -52,12 +53,13 @@ export default function Header() {
       }}
       className="h-[75vh] relative bg-cover bg-center p-0 m-0 text-card dark:text-card-foreground"
     >
-      <div className="w-full h-full flex   justify-center items-center bg-black bg-opacity-60">
-        <div>
-          <span>Najdaoui Zobair</span>
-          <span>Full-Stack Developer</span>
+      <div className="p-10 w-full h-full flex flex-col gap-2 items-center bg-black bg-opacity-80  ">
+      <div className="pl-24 w-full h-full flex   justify-around items-center">
+        <div className='capitalize flex flex-col gap-6 text-3xl items-center '>
+          <span >Najdaoui Zobair</span>
+          <span className='text-primary'>Full-Stack Developer</span>
         </div>
-        <div>
+        <div className={"flex flex-col gap-6 items-center"}>
           <div>
             <Avatar className="w-[200px] h-auto">
               <AvatarImage src={my_profile_image.src} alt="zobair najdaoui" />
@@ -66,7 +68,7 @@ export default function Header() {
           </div>
           <div>
             {/* links */}
-            <ul className="flex gap-2">
+            <ul className="flex gap-3">
               {socials.map((social) => (
                 <li key={social.name}>
                   {/* // make svg white */}
@@ -84,6 +86,8 @@ export default function Header() {
             </ul>
           </div>
         </div>
+        </div>
+      <Mouse size={40} />
       </div>
     </div>
   );
