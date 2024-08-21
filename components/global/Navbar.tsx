@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <nav className="w-full">
             <ul className="flex flex-col gap-4 w-full items-center [&>li>a]:w-full [&>li>a]:flex [&>li>a]:flex-col [&>li>a]:items-center pb-2 ">
               <li>
-                <Link href="/">
+                <Link href="#about">
                   <User />
                   <span>About</span>
                 </Link>
