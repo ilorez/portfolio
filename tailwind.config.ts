@@ -1,6 +1,11 @@
 import type { Config } from "tailwindcss"
 const { fontFamily } = require("tailwindcss/defaultTheme")
 
+// variables to add
+
+
+
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -59,6 +64,18 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "i-about-from": "hsl(var(--i-about-from))",
+        "i-about-via": "hsl(var(--i-about-via))",
+        "i-about-to": "hsl(var(--i-about-to))",
+        "i-services-bg": "hsl(var(--i-services-bg))",
+        "i-services-icon": "hsl(var(--i-services-icon))",
+        "i-fun-facts-bg": "hsl(var(--i-fun-facts-bg))",
+        "i-fun-facts-icon": "hsl(var(--i-fun-facts-icon))",
+        "i-experience-from": "hsl(var(--i-experience-from))",
+        "i-experience-via": "hsl(var(--i-experience-via))",
+        "i-experience-to": "hsl(var(--i-experience-to))",
+        "i-experience-date": "hsl(var(--i-experience-date))",
+        "i-experience-bg": "hsl(var(--i-experience-bg))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -78,6 +95,9 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      width: {
+        "vertical-line": "var(--i-vertical-line-width)",
       },
     },
   },
