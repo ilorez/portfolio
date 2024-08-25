@@ -6,7 +6,7 @@
 - [ ] get done with dark mode and light mode with it's colors
 - [ ] fonts
 - [ ] add a package for animation like framemotion
-- [ ] remove unessassery icons and images
+- [ ] remove unessassery icons and images and components
 
 ## My static data
 
