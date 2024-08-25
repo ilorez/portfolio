@@ -10,7 +10,6 @@ const About: React.FC = () => {
       {/* about */}
       <div className="flex flex-row gap-6 h-screen">
         {/* the line */}
-
         <div className="flex flex-col items-center justify-center gap-2">
           <div className="relative inline-block">
             <div
@@ -24,7 +23,7 @@ const About: React.FC = () => {
               <User size={30} />
             </div>
           </div>
-          <VerticalLine />
+          <VerticalLine from='#93D1BE' via="#2EB88E" to="#93D1BE" />
         </div>
         {/* content */}
         <div>
