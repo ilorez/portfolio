@@ -19,11 +19,11 @@ const About: React.FC = () => {
                 transform: 'scale(2.40)' // Makes the shadow slightly larger than the icon
               }}
             ></div>
-            <div className="relative z-10">
+            <div className="relative">
               <User size={30} />
             </div>
           </div>
-          <VerticalLine from='#93D1BE' via="#2EB88E" to="#93D1BE" />
+          <VerticalLine className="bg-gradient-to-b from-i-about-from via-i-about-via to-i-about-to" />
         </div>
         {/* content */}
         <div>
