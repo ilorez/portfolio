@@ -4,9 +4,14 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Cat_Happy, Cat_Sad, Cat_Very_Happy } from './Icons';
 import { AtSign, FerrisWheel, Lightbulb, TextSelect, User } from 'lucide-react';
+import { ModeToggle } from '../mode-toggle';
+// get theme from next-themes
+import { useTheme } from 'next-themes';
 
 interface NavbarProps {}
 const Navbar: React.FC<NavbarProps> = () => {
+  // get theme from next-themes
+  const { theme } = useTheme();
   const [open, setOpen] = useState(true);
   // navbar on scroll effect
   const [navStyle, setNavStyle] = useState('');
@@ -44,18 +49,30 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <div
       className={cn(
-        'flex  flex-col gap-6 w-fit px-1 py-1 bg-card border-gray-200 rounded-full shadow-lg dark:bg-card ',
+        'flex  flex-col gap-6 w-fit px-1 py-1 bg-card border-gray-200 rounded-full shadow-lg dark:bg-card  ',
         navStyle
       )}
     >
       <div className="w-full" onClick={() => setOpen(!open)}>
         {open ? (
-          <div className='flex flex-col items-center '>
-            <Cat_Very_Happy color="black" size="60" /> <span className='relative bottom-[10px]'>Ilorez</span>
+          <div className="flex flex-col items-center ">
+            {/* if it next theme is dark mode color of cat should be white */}
+            {theme === 'dark' ? (
+              <Cat_Very_Happy color="white" size="60" />
+            ) : (
+              <Cat_Very_Happy color="black" size="60" />
+            )}
+
+            {/* <Cat_Very_Happy color="black" size="60" /> */}
+            <span className="relative bottom-[10px]">Ilorez</span>
           </div>
+        ) : theme === 'dark' ? (
+          <Cat_Sad color="white" size="60" />
         ) : (
           <Cat_Sad color="black" size="60" />
-        )}
+        )
+        // <Cat_Sad color="black" size="60" />
+        }
       </div>
       {open && (
         <div className="w-full">
@@ -90,6 +107,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                   <AtSign />
                   <span>Contact</span>
                 </Link>
+              </li>
+              <li>
+                <ModeToggle />
               </li>
             </ul>
           </nav>
