@@ -1,5 +1,5 @@
 {
-  "info":{
+  "info": {
     "username": "ilorez",
     "first_name": "zobair",
     "last_name": "najdaoui",
@@ -7,27 +7,228 @@
     "phone": "",
     "address": "Morocco",
     "website": "https://nadaoui.me",
-    "bio": "I'm a full-stack developer, I love to build things and solve problems. I'm passionate about technology and I'm always looking for new things to learn."
+    "Jobs": [
+      "Full-Stack Developer",
+      "MERN Stack Developer",
+      "React Developer",
+      "Node.js Developer",
+      "Express Developer",
+      "MongoDB Developer",
+      "Designer"
+    ],
+    "bio": "I'm a full-stack developer, I love to build things and solve problems. I'm passionate about technology and I'm always looking for new things to learn.",
+    "profile_picture": "/public/znajdaou.jpg",
+    "cover_picture": "/public/background.jpg",
+    "resume": "/public/zobair_najdaoui_cv.pdf"
   },
-  "services":{
-
+  "services": [
+    {
+      "title": "Web Development",
+      "description": "I can build you a website from scratch or help you with your existing website. I have experience with HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
+      "icon": "/public/services/web-development.svg"
+    },
+    {
+      "title": "web optimization",
+      "description": "I can help you optimize your website for speed and SEO. I have experience with performance optimization, image optimization, and SEO best practices.",
+      "icon": "/public/services/web-optimization.svg"
+    },
+    {
+      "title": "Design",
+      "description": "I can help you with your design needs. I have experience with Adobe Photoshop, Adobe Illustrator, and Figma.",
+      "icon": "/public/services/design.svg"
+    },
+    {
+      "title": "Consulting",
+      "description": "I can help you with your tech-related problems. I have experience with web development, design, and more.",
+      "icon": "/public/services/consulting.svg"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project 1",
+      "description": "This is a description of project 1.",
+      "image": "/public/projects/project1.jpg",
+      "link": "https://example.com"
+    },
+    {
+      "title": "Project 2",
+      "description": "This is a description of project 2.",
+      "image": "/public/projects/project2.jpg",
+      "link": "https://example.com"
+    },
+    {
+      "title": "Project 3",
+      "description": "This is a description of project 3.",
+      "image": "/public/projects/project3.jpg",
+      "link": "https://example.com"
+    }
+  ],
+  "skills": {
+    "Web Development": [
+      {
+        "name": "HTML",
+        "level": "90%"
+      },
+      {
+        "name": "CSS",
+        "level": "90%"
+      },
+      {
+        "name": "JavaScript",
+        "level": "90%"
+      },
+      {
+        "name": "React",
+        "level": "90%"
+      },
+      {
+        "name": "Node.js",
+        "level": "90%"
+      },
+      {
+        "name": "Express",
+        "level": "90%"
+      },
+      {
+        "name": "MongoDB",
+        "level": "90%"
+      }
+    ],
+    "Design": [
+      {
+        "name": "Adobe Photoshop",
+        "level": "90%"
+      },
+      {
+        "name": "Adobe Illustrator",
+        "level": "90%"
+      },
+      {
+        "name": "Figma",
+        "level": "90%"
+      }
+    ],
+    "Other": [
+      {
+        "name": "Git",
+        "level": "90%"
+      },
+      {
+        "name": "SEO",
+        "level": "90%"
+      },
+      {
+        "name": "Performance Optimization",
+        "level": "90%"
+      }
+    ],
+    "DevOps": [
+      {
+        "name": "Docker",
+        "level": "90%"
+      },
+      {
+        "name": "Kubernetes",
+        "level": "90%"
+      },
+      {
+        "name": "Jenkins",
+        "level": "90%"
+      }
+    ],
+    "Languages": [
+      {
+        "name": "English",
+        "level": "90%"
+      },
+      {
+        "name": "French",
+        "level": "90%"
+      },
+      {
+        "name": "Arabic",
+        "level": "90%"
+      }
+    ],
+    "Tools": [
+      {
+        "name": "Visual Studio Code",
+        "level": "90%"
+      },
+      {
+        "name": "Adobe Creative Cloud",
+        "level": "90%"
+      },
+      {
+        "name": "Figma",
+        "level": "90%"
+      }
+    ]
   },
-  "projects":{
-
+  "fun_facts": [
+    {
+      "icon": "/public/icons/heart.svg",
+      "text": "I love to code."
+    },
+    {
+      "icon": "/public/icons/heart.svg",
+      "text": "I love to learn new things."
+    },
+    {
+      "icon": "/public/icons/heart.svg",
+      "text": "I love to solve problems."
+    },
+    {
+      "icon": "/public/icons/heart.svg",
+      "text": "I love to build things."
+    },
+    {
+      "icon": "/public/icons/heart.svg",
+      "text": "I love to help people."
+    }
+  ],
+  "socials": {
+    "facebook": "https://facebook.com/ilorez",
+    "twitter": "https://twitter.com/ilorez",
+    "instagram": "https://instagram.com/ilorez",
+    "linkedin": "https://linkedin.com/in/ilorez",
+    "github": ""
   },
-  "skills":{
-
-  },
-  "fun_facts":{
-
-  },
-  "socials":{
-
-  },
-  "education":{
-
-  },
-  "experience":{
-
-  }
+  "education": [
+    {
+      "degree": "Bachelor's Degree",
+      "major": "Computer Science",
+      "school": "School 1",
+      "location": "Location 1",
+      "start_date": "January 2015",
+      "end_date": "December 2018",
+      "description": "This is a description of my time at School 1."
+    },
+    {
+      "degree": "High School Diploma",
+      "school": "School 2",
+      "location": "Location 2",
+      "start_date": "January 2011",
+      "end_date": "December 2014",
+      "description": "This is a description of my time at School 2."
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer",
+      "company": "Company 1",
+      "location": "Location 1",
+      "start_date": "January 2020",
+      "end_date": "Present",
+      "description": "This is a description of my role at Company 1."
+    },
+    {
+      "title": "Web Developer",
+      "company": "Company 2",
+      "location": "Location 2",
+      "start_date": "January 2018",
+      "end_date": "December 2019",
+      "description": "This is a description of my role at Company 2."
+    }
+  ]
 }
