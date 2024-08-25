@@ -1,6 +1,6 @@
 # Todo
 
-## Style
+## primary steps Style
 
 - [ ] get done with colors make variables create full site colors system
 - [ ] get done with dark mode and light mode with it's colors
@@ -40,6 +40,11 @@
 - [ ] create skills component
 - [ ] create socials component
 - [ ] create footer component
+
+## Navbar
+
+- [ ] Link navbar links
+- [ ] Add active class to navbar links
 
 ## Host
 
