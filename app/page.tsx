@@ -14,7 +14,7 @@ export default function Home() {
       <div className="fixed top-0 m-6 z-10">
         <Navbar />
       </div>
-      <div className="m-6 text-card">
+      <div className="m-6 ">
         <About />
       </div>
     </div>
