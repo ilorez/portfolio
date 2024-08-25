@@ -63,7 +63,6 @@ const Navbar: React.FC<NavbarProps> = () => {
               <Cat_Very_Happy color="black" size="60" />
             )}
 
-            {/* <Cat_Very_Happy color="black" size="60" /> */}
             <span className="relative bottom-[10px]">Ilorez</span>
           </div>
         ) : theme === 'dark' ? (
@@ -71,7 +70,6 @@ const Navbar: React.FC<NavbarProps> = () => {
         ) : (
           <Cat_Sad color="black" size="60" />
         )
-        // <Cat_Sad color="black" size="60" />
         }
       </div>
       {open && (
