@@ -4,7 +4,8 @@
 
 @layer base {
   :root {
-    --background: 165 9% 18%;
+    /* --background: 165 9% 18%; */
+    --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -29,10 +30,24 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
+    --i-vertical-line-width: 0.40rem;
+    --i-about-from: 160 29% 66%;
+    --i-about-via: 163 74% 45%;
+    --i-about-to: 160 29% 66%;
+    --i-services-bg: 160 20% 26%;
+    --i-services-icon: 163 74% 45%;
+    --i-fun-facts-bg: 160 20% 26%;
+    --i-fun-facts-icon: 163 74% 45%;
+    --i-experience-from: 11 41% 79%;
+    --i-experience-via: 14 84% 50%;
+    --i-experience-to: 11 41% 79%;
+    --i-experience-date: 163 74% 45%;
+    --i-experience-bg: 14 19% 27%;
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
+    --background: 165 9% 18%;
     --foreground: 0 0% 95%;
     --card: 24 9.8% 10%;
     --card-foreground: 0 0% 95%;
@@ -56,6 +71,19 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    --i-about-from: 160 29% 66%;
+    --i-about-via: 163 74% 45%;
+    --i-about-to: 160 29% 66%;
+    --i-services-bg: 160 20% 26%;
+    --i-services-icon: 163 74% 45%;
+    --i-fun-facts-bg: 160 20% 26%;
+    --i-fun-facts-icon: 163 74% 45%;
+    --i-experience-from: 11 41% 79%;
+    --i-experience-via: 14 84% 50%;
+    --i-experience-to: 11 41% 79%;
+    --i-experience-date: 163 74% 45%;
+    --i-experience-bg: 14 19% 27%;
   }
 }
 
