@@ -2,7 +2,8 @@ import React from 'react';
 import VerticalLine from '../VerticalLine';
 import { User } from 'lucide-react';
 import CapitalizedText from '../CapitalizedText';
-import IconWithShadow from '../IconWithShadow';
+import { thirdFont } from '@/app/fonts';
+import { cn } from '@/lib/utils';
 
 const About: React.FC = () => {
   return (
@@ -31,12 +32,16 @@ const About: React.FC = () => {
           <div className="flex flex-col gap-2">
             <CapitalizedText text="About Me" />
             <p>
-              I&apos;m <span className="text-primary">Zobair Najdaoui</span>, a
-              full-stack developer from Morocco with a knack for design. I love
-              running and traveling, finding joy in the simplicity of a good run
-              and the adventure of exploring new places. Combining my technical
-              skills with my passions, I strive to create engaging digital
-              experiences that leave a mark.
+              I&apos;m{' '}
+              <span className={cn('text-primary', thirdFont.className)}>
+                Zobair Najdaoui
+              </span>
+              , a full-stack <span className="font-sans">developer</span> from
+              Morocco with a knack for design. I love running and traveling,
+              finding joy in the simplicity of a good run and the adventure of
+              exploring new places. Combining my technical skills with my
+              passions, I strive to create engaging digital experiences that
+              leave a mark.
             </p>
           </div>
           {/* services */}
