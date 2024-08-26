@@ -1,11 +1,6 @@
 import type { Config } from "tailwindcss"
 const { fontFamily } = require("tailwindcss/defaultTheme")
 
-// variables to add
-
-
-
-
 const config = {
   darkMode: ["class"],
   content: [
@@ -28,7 +23,10 @@ const config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ["var(--font-sans)", ...fontFamily.sans], // the second value is the default sans-serif font is for the case the custom font is not loaded
+        primary: ["var(--font-primary)", ...fontFamily.sans],
+        secondary: ["var(--font-secondary)", ...fontFamily.sans],
+        third: ["var(--font-third)", ...fontFamily.sans]
       },
       colors: {
         border: "hsl(var(--border))",
