@@ -1,14 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
-
-import { Inter as FontSans } from 'next/font/google';
-
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
-const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans'
-});
+import { fonts } from '@/lib/fonts';
 
 export const metadata: Metadata = {
   title: 'Ilorez',
@@ -24,8 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          fontSans.variable
+          'min-h-screen bg-background font-primary antialiased',
+          fonts[0].variable
         )}
       >
         <ThemeProvider
