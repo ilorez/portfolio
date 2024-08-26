@@ -1,8 +1,7 @@
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Cat_Happy, Cat_Sad, Cat_Very_Happy } from './Icons';
+import { Cat_Sad, Cat_Very_Happy } from './Icons';
 import { AtSign, FerrisWheel, Lightbulb, TextSelect, User } from 'lucide-react';
 import { ModeToggle } from '../mode-toggle';
 // get theme from next-themes
@@ -38,9 +37,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         setOpen(true);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
