@@ -46,7 +46,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <div
       className={cn(
-        'flex  flex-col gap-6 w-fit px-1 py-1 bg-card border-gray-200 rounded-full shadow-lg dark:bg-card  ',
+        'flex  flex-col gap-6 w-fit px-1 py-1 bg-card  rounded-full shadow-lg dark:bg-card  ',
         navStyle
       )}
     >
