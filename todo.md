@@ -5,8 +5,8 @@
 - [x] get done with colors make variables create full site colors system
 - [x] get done with dark mode and light mode with it's colors
 - [x] fonts
-- [ ] add a package for animation like framemotion
-- [ ] remove unessassery icons and images and components
+- [x] add a package for animation "Gsap"
+- [x] remove unessassery icons and images and components
 
 ## My static data
 
