@@ -266,20 +266,20 @@
   ],
   "experience": [
     {
-      "title": "Software Engineer",
-      "company": "Company 1",
-      "location": "Location 1",
-      "start_date": "January 2020",
-      "end_date": "Present",
-      "description": "This is a description of my role at Company 1."
+      "title": "Développeur Full-Stack",
+      "company": "AlloBaba",
+      "location": "Morocco, Marrakech",
+      "start_date": "Mars 2024",
+      "end_date": "Avril 2024",
+      "description": "AlloBaba est une agence internationale de communication web et marketing digital, offrant des solutions innovantes et un développement rapide pour des projets exigeants. En tant que développeur Full-Stack, j'étais responsable de la conception, du déploiement et de la maintenance d'applications web internes et externes."
     },
     {
-      "title": "Web Developer",
-      "company": "Company 2",
-      "location": "Location 2",
-      "start_date": "January 2018",
-      "end_date": "December 2019",
-      "description": "This is a description of my role at Company 2."
+      "title": "Stage in Wilaya Marrakech Safi",
+      "company": "Wilaya Marrakech Safi",
+      "location": "Morocco, Marrakech",
+      "start_date": "September 2023",
+      "end_date": "December 2023",
+      "description": "As an intern at Wilaya Marrakech Safi, I had the opportunity to contribute to humanitarian efforts following the earthquake in Al Haouz. My mission was to capture crucial information for the people affected by the natural disaster."
     }
   ]
 }
