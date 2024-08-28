@@ -11,12 +11,12 @@
 ## My static data
 
 - [ ] write services data in ilorez.json file
-- [ ] wite fun fucts data
+- [x] wite fun fucts data
 - [ ] write exprience data
-- [ ] write education data
+- [x] write education data
 - [ ] write projects data
-- [ ] write skills data
-- [ ] write socials data
+- [x] write skills data
+- [x] write socials data
 
 ## Very important components
 
