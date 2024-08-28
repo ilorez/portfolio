@@ -25,42 +25,45 @@
     {
       "title": "Web Development",
       "description": "I can build you a website from scratch or help you with your existing website. I have experience with HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
-      "icon": "/public/services/web-development.svg"
+      "icon": "WebDevelopment"
     },
     {
       "title": "web optimization",
       "description": "I can help you optimize your website for speed and SEO. I have experience with performance optimization, image optimization, and SEO best practices.",
-      "icon": "/public/services/web-optimization.svg"
+      "icon": "WebOptimization"
     },
     {
       "title": "Design",
       "description": "I can help you with your design needs. I have experience with Adobe Photoshop, Adobe Illustrator, and Figma.",
-      "icon": "/public/services/design.svg"
+      "icon": "Design"
     },
     {
       "title": "Consulting",
       "description": "I can help you with your tech-related problems. I have experience with web development, design, and more.",
-      "icon": "/public/services/consulting.svg"
+      "icon": "Consulting"
     }
   ],
   "projects": [
     {
-      "title": "Project 1",
-      "description": "This is a description of project 1.",
-      "image": "/public/projects/project1.jpg",
-      "link": "https://example.com"
+      "title": "Kouralink",
+      "description": "KouraLink is a platform for football enthusiasts. It connects players and teams from all over the world, allowing them to form teams, organize matches, and participate in tournaments.",
+      "image": "https://avatars.githubusercontent.com/u/161023217?s=200&v=4",
+      "link": "https://kouralink.vercel.app",
+      "github": "https://github.com/kouralink"
     },
     {
-      "title": "Project 2",
-      "description": "This is a description of project 2.",
-      "image": "/public/projects/project2.jpg",
-      "link": "https://example.com"
+      "title": "Scrapy",
+      "description": "Scrapy is a web scraping tool that allows you to extract data from some websites . It's fast, powerful, and easy to use.",
+      "image": "https://avatars.githubusercontent.com/u/162126226?s=200&v=4",
+      "link": "https://scrapyab.vercel.app/scrapy",
+      "github": "https://github.com/Allobaba-WebScrapy"
     },
     {
-      "title": "Project 3",
-      "description": "This is a description of project 3.",
-      "image": "/public/projects/project3.jpg",
-      "link": "https://example.com"
+      "title": "HandyScript",
+      "description": "A set of useful Javascript modules that extends the javascript core context.",
+      "image": "https://avatars.githubusercontent.com/u/133532543?s=200&v=4",
+      "link": "https://www.handyscript.tech/",
+      "github": "https://github.com/handyscript/handyscript"
     }
   ],
   "skills": {
@@ -224,11 +227,11 @@
   },
   "fun_facts": [
     {
-      "icon": "/public/icons/heart.svg",
+      "icon": "Walker",
       "text": "I once hiked an astounding about 80 kilometers along mountain trails in just a day and a half! 🏔️🚶‍♂️"
     },
     {
-      "icon": "/public/icons/heart.svg",
+      "icon": "Secret",
       "text": "ah ha this is a secret"
     }
   ],

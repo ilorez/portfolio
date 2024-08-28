@@ -10,11 +10,11 @@
 
 ## My static data
 
-- [ ] write services data in ilorez.json file
+- [x] write services data in ilorez.json file
 - [x] wite fun fucts data
 - [x] write exprience data
 - [x] write education data
-- [ ] write projects data
+- [x] write projects data
 - [x] write skills data
 - [x] write socials data
 
