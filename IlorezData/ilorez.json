@@ -1,19 +1,16 @@
 {
   "info": {
-    "username": "ilorez",
-    "first_name": "zobair",
-    "last_name": "najdaoui",
+    "username": "Ilorez",
+    "first_name": "Zobair",
+    "last_name": "Najdaoui",
     "email": "zobirnadaoui@gmail.com",
     "phone": "",
-    "address": "Morocco",
+    "address": "Morocco, Marrakech",
     "website": "https://nadaoui.me",
     "Jobs": [
       "Full-Stack Developer",
       "MERN Stack Developer",
-      "React Developer",
-      "Node.js Developer",
-      "Express Developer",
-      "MongoDB Developer",
+      "Freelancer",
       "Designer"
     ],
     "bio": "I'm a full-stack developer, I love to build things and solve problems. I'm passionate about technology and I'm always looking for new things to learn.",
