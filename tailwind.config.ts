@@ -29,6 +29,7 @@ const config = {
         third: ["var(--font-third)", ...fontFamily.sans]
       },
       colors: {
+        "light-primary": "hsl(var(--light-primary))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -96,6 +97,12 @@ const config = {
       },
       width: {
         "vertical-line": "var(--i-vertical-line-width)",
+      },
+      boxShadow: {
+        "i-about-from": "var(--i-about-from)",
+        "i-services-bg": "var(--i-services-bg)",
+        "i-fun-facts-bg": "var(--i-fun-facts-bg)",
+        "i-experience-from": "var(--i-experience-from)",
       },
     },
   },
