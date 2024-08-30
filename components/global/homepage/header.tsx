@@ -59,12 +59,12 @@ export default function Header() {
       style={{
         backgroundImage: `url(${bg_image.src})`
       }}
-      className="h-[75vh] relative bg-cover bg-center p-0 m-0"
+      className="h-[75vh] relative bg-cover bg-center p-0 m-0 text-white"
     >
       <div className="p-10 w-full h-full flex flex-col gap-2 items-center bg-black bg-opacity-80  ">
         <div className="pl-24 w-full h-full flex   justify-around items-center">
           <div className="capitalize flex flex-col gap-6 text-3xl items-center ">
-            <span>Najdaoui Zobair</span>
+            <span >Najdaoui Zobair</span>
             <span className="text-primary">
               Full-Stack Developer
             </span>
@@ -78,7 +78,7 @@ export default function Header() {
             </div>
             <div>
               {/* links */}
-              <ul className="flex gap-3">
+              <ul className="flex gap-3 ">
                 {socials.map((social) => (
                   <li key={social.name}>
                     {/* // make svg white */}
@@ -96,7 +96,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <Mouse size={40} />
+        <Mouse size={40}  />
       </div>
     </div>
   );
