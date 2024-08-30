@@ -12,7 +12,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col m-6 w-fit items-start mt-6">
 
-      <div className="w-full max-w-[800px]  text-lg">
+      <div className="w-full   ">
         <About />
       </div>
       </div>
