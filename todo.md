@@ -20,20 +20,20 @@
 
 ## Very important components
 
-- [ ] Take Time to create Vertical Line Component
+- [x] Take Time to create Vertical Line Component
 - [ ] The line
-  - [ ] should be responsive
+  - [x] should be responsive
   - [ ] should be animated
-  - [ ] should be able to change color
-  - [ ] should be able to change width
-- [ ] there same think repeat for component so make next layout component
-  - [ ] contain the vertical line with icon
-  - [ ] title with (text | list of components)
+  - [x] should be able to change color
+  - [x] should be able to change width
+<!-- - [ ] there same think repeat for component so make next layout component -->
+  <!-- - [ ] contain the vertical line with icon -->
+  <!-- - [ ] title with (text | list of components) -->
 
 ## Homepage
 
-- [ ] make title of each section like Figma style
-- [ ] create service component
+- [x] make title of each section like Figma style
+- [x] create service component
 - [ ] create fun facts component
 - [ ] create exprience component
 - [ ] create education component
