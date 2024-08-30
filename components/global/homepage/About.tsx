@@ -4,8 +4,12 @@ import { User } from 'lucide-react';
 import CapitalizedText from '../CapitalizedText';
 import { thirdFont } from '@/app/fonts';
 import { cn } from '@/lib/utils';
+// import json data
+import data from '@/IlorezData/ilorez.json';
+import Services, { Service } from './Services';
 
 const About: React.FC = () => {
+  const services: Service[] = data.services as Service[];
   return (
     <div className="flex flex-col pl-6 w-full">
       {/* about */}
@@ -29,11 +33,11 @@ const About: React.FC = () => {
           <VerticalLine className="bg-gradient-to-b from-i-about-from via-i-about-via to-i-about-to" />
         </div>
         {/* content */}
-        <div>
+        <div className='flex flex-col gap-5'>
           {/* about me */}
           <div className="flex flex-col gap-2">
             <CapitalizedText text="About Me" />
-            <p className='text-justify'>
+            <p className="text-justify text-lg max-w-[800px]">
               I&apos;m{' '}
               <span className={cn('text-primary', thirdFont.className)}>
                 Zobair Najdaoui
@@ -47,7 +51,19 @@ const About: React.FC = () => {
             </p>
           </div>
           {/* services */}
-          <div></div>
+          <div className="flex flex-col gap-2">
+            <CapitalizedText text="Services" />
+            <div className='flex flex-wrap w-full gap-2'>
+              {services.map((service, index) => (
+                <Services
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  icon={service.icon}
+                />
+              ))}
+            </div>
+          </div>
           {/* fun fucts */}
           <div></div>
         </div>
