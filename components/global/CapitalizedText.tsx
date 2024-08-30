@@ -6,7 +6,7 @@ const CapitalizedText = ({ text }: { text: string }) => {
     const firstLetter = word.charAt(0).toUpperCase();
     const restOfWord = word.slice(1);
     return (
-      <span key={word}>
+      <span key={word} className='text-light-primary font-bold text-lg'>
         <span className="text-primary font-bold">{firstLetter}</span>
         {restOfWord}
       </span>
