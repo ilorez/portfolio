@@ -22,22 +22,22 @@
     {
       "title": "Web Development",
       "description": "I can build you a website from scratch or help you with your existing website. I have experience with HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
-      "icon": "WebDevelopment"
+      "icon": "code-xml"
     },
     {
       "title": "web optimization",
       "description": "I can help you optimize your website for speed and SEO. I have experience with performance optimization, image optimization, and SEO best practices.",
-      "icon": "WebOptimization"
+      "icon": "rocket"
     },
     {
       "title": "Design",
       "description": "I can help you with your design needs. I have experience with Adobe Photoshop, Adobe Illustrator, and Figma.",
-      "icon": "Design"
+      "icon": "brush"
     },
     {
       "title": "Consulting",
       "description": "I can help you with your tech-related problems. I have experience with web development, design, and more.",
-      "icon": "Consulting"
+      "icon": "badge-help"
     }
   ],
   "projects": [
