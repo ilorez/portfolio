@@ -145,114 +145,114 @@ export function Cat_Happy({ color = 'currentColor', size }: IconProps) {
       <path
         d="M15.692 24.75C9.37345 20.4776 14.5809 13.8122 18.75 20.619"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M38.85 20.0697C41.9559 15.079 49.3171 15.7336 44.7379 22.5"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M24.1729 23.85C24.0543 23.115 24.4267 22.4046 24.6 21.75"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M29.1 24.75C29.1613 23.4924 29.2422 22.2317 29.4 21"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M34.2 23.85C34.2 23.1991 34.2 22.5493 34.2 21.9"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M22.95 33.45C24.0709 33.1373 25.2579 33.0035 26.4 32.85"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M33.75 32.85C34.9343 32.6139 36.0422 32.6897 37.2 32.85"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M28.2 38.4007C33.225 35.8113 32.6007 39.6903 28.7218 39.0847"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M30.15 40.05C29.8581 43.2459 27.296 43.5262 25.05 42.5601"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M30.0062 40.05C29.8297 44.2948 33.5372 43.6509 35.5501 41.611"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M16.65 36.45C14.449 35.7342 12.1218 35.6947 9.90002 35.4"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M17.4 40.05C14.9801 40.6212 12.5614 41.0628 10.2 41.85"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M43.95 34.95C45.6751 34.494 47.3532 33.843 49.05 33.3"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M44.55 39.15C46.3286 38.9245 48.3207 39.004 49.95 39.0643"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -270,122 +270,122 @@ export function Cat_Sad({ color = 'currentColor', size }: IconProps) {
       <path
         d="M24.8812 34.0824C29.0151 33.5388 33.4551 33.6049 37.2913 34.2249"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M27.6223 35.8803C27.9457 35.316 27.6063 34.8277 27.5298 34.3036"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M34.001 35.6928C34.001 35.2173 34.001 34.7417 34.001 34.2669"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M25.0277 25.4634C25.2038 24.6046 24.9376 23.5765 24.8636 22.8409"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M30.4369 26.5959C30.463 24.7992 30.4369 22.9862 30.4369 21.1793"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M35.3175 24.714C35.2623 23.7142 35.2357 22.7194 35.2357 21.717"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M13.711 23.0379C6.31812 16.4483 15.6835 16.2084 19.567 22.2747"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M41.2186 20.9343C43.987 12.7579 50.7345 16.204 45.2539 23.4598"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M30.9719 39.5326C33.9917 38.5893 32.7125 42.0789 30.6456 39.3727"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M31.5566 41.5395C30.4485 43.0707 29.804 43.2795 28.8278 43.65"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M32.1766 41.9643C32.664 43.0678 33.4639 42.9976 34.245 43.2754"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M17.9242 36.5148C15.7356 36.2743 12.8594 36.1804 10.9672 35.9529"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M18.0792 40.7082C16.1318 41.3868 14.212 42.1383 12.2502 42.7686"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M48.6576 34.2789C46.6913 34.7465 44.8343 35.6373 43.0167 36.5267"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M49.2 40.4711C47.4059 40.3325 45.5718 40.2446 43.0167 40.4111"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -403,114 +403,114 @@ export function Cat_Very_Happy({ color = 'currentColor', size }: IconProps) {
       <path
         d="M15.7262 21.8638C12.6574 15.486 17.0964 14.084 20.7093 19.0153"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M41.7675 18.8505C46.5027 12.8896 47.4687 18.5227 45.9547 23.4532"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M26.1223 22.4832C26.1718 21.7063 26.2218 20.9311 26.2713 20.1561"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M31.2878 23.4516C31.2342 21.963 31.4145 20.4716 31.5861 18.9944"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M36.2037 22.4826C36.4608 21.7356 36.3032 20.9318 36.3533 20.1567"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M24.6174 29.8205C30.761 29.7357 29.5232 31.523 24.2792 33.4995"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M35.6766 29.653C30.5421 31.9063 31.5819 30.9621 35.5046 33.5289"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M29.533 38.18C26.9918 38.3208 29.3291 41.0501 31.5292 38.3469"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M29.0084 42.9963C27.274 43.7517 26.3837 43.4257 25.1305 42.4434"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M29.5902 42.4434C30.9627 44.6142 33.1404 43.8501 34.8257 42.4434"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M16.4049 34.6917C14.5177 34.6682 11.4228 34.0811 10.2 33.9165"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M16.7927 38.5278C14.4105 38.6412 12.3172 39.1701 10.3939 40.0773"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M49.9499 32.1335C47.4247 32.4045 45.3305 33.0308 43.3573 34.3061"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M49.7947 39.3672C47.755 38.8312 45.702 38.7858 43.5898 38.7858"
         stroke={color}
-        stroke-opacity="0.9"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeOpacity="0.9"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
