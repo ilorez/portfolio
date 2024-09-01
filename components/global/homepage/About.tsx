@@ -7,9 +7,11 @@ import { cn } from '@/lib/utils';
 // import json data
 import data from '@/IlorezData/ilorez.json';
 import Services, { Service } from './Services';
+import FunFacts, { FunFact } from './FunFact';
 
 const About: React.FC = () => {
   const services: Service[] = data.services as Service[];
+  const fun_facts: FunFact[] = data.fun_facts as FunFact[];
   return (
     <div className="flex flex-col pl-6 w-full">
       {/* about */}
@@ -65,7 +67,18 @@ const About: React.FC = () => {
             </div>
           </div>
           {/* fun fucts */}
-          <div></div>
+          <div className="flex flex-col gap-2">
+            <CapitalizedText text="Fun Facts" />
+            <div className='flex flex-wrap w-full gap-2'>
+              {fun_facts.map((fun_fact, index) => (
+                <FunFacts
+                  key={index}
+                  text={fun_fact.text}
+                  icon={fun_fact.icon}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
