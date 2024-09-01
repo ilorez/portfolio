@@ -34,7 +34,7 @@
 
 - [x] make title of each section like Figma style
 - [x] create service component
-- [ ] create fun facts component
+- [x] create fun facts component
 - [ ] create exprience component
 - [ ] create education component
 - [ ] create projects component
