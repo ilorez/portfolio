@@ -14,7 +14,7 @@ export interface FunFact {
 
 const FunFacts = ({ text, icon }: FunFact) => {
   return (
-    <Card className="w-[400px] max-w-[400px] bg-i-fun-facts-bg flex flex-col gap-2 justify-center border-none shadow-none outline-none">
+    <Card className="w-[250px] max-w-[250px] bg-i-fun-facts-bg flex flex-col gap-2 justify-center border-none shadow-none outline-none">
       <CardHeader className='w-full flex flex-col justify-center items-center '>
         <Icon name={icon} className='text-i-fun-facts-icon' size={40} />
       </CardHeader>
