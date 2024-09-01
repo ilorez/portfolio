@@ -32,6 +32,8 @@
     --chart-5: 27 87% 67%;
 
     --light-primary: 164 10% 39%;
+    --light-about: 164 10% 39%;
+    --light-experience: 12 49% 85%;
 
     --i-vertical-line-width: 0.40rem;
     --i-about-from: 160 29% 66%;
@@ -75,6 +77,9 @@
     --chart-5: 340 75% 55%;
 
     --light-primary: 162 35% 82%;
+    --light-about: 162 35% 82%;
+    --light-experience: 12 49% 85%;
+
 
     --i-about-from: 160 29% 66%;
     --i-about-via: 163 74% 45%;
