@@ -30,6 +30,8 @@ const config = {
       },
       colors: {
         "light-primary": "hsl(var(--light-primary))",
+        "light-experience":"hsl(var(--light-experience))",
+        "light-about": "hsl(var(--light-about))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
