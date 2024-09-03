@@ -37,15 +37,17 @@ const ExperienceCard = ({
   end_date
 }: ExperienceProps) => {
   return (
-    <Card className="w-[400px] max-w-[400px] bg-i-experience-bg flex flex-col gap-2 justify-center border-none shadow-none outline-none">
-      <CardHeader className="w-full flex flex-col justify-center items-center ">
-        <Badge variant="outline">
+    <Card className="w-[500px] max-w-[500px] bg-i-experience-bg flex flex-col gap-2 border-none shadow-none outline-none">
+      <CardHeader className="w-full flex flex-col gap-4">
+        <Badge variant="outline" className="w-fit text-i-experience-date border-i-experience-date rounded-sm">
           {start_date}-{end_date}
         </Badge>
-        <CardTitle>{title}</CardTitle>
+        <div className="w-full flex flex-col">
+        <CardTitle className="w-full text-xl">{title}</CardTitle>
         <CardDescription>{company} ({location})</CardDescription>
+        </div>
       </CardHeader>
-      <CardContent className="w-full text-center">{description}</CardContent>
+      <CardContent className="w-full">{description}</CardContent>
     </Card>
   );
 };
