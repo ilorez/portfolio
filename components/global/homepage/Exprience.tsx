@@ -25,7 +25,7 @@ const Experience: React.FC = () => {
             cap_color="text-i-experience-via"
             light_color="text-light-experience"
           />
-          <div>
+          <div className="flex flex-wrap w-full gap-2">
             {experiences.map((exp, index) => (
               <ExperienceCard key={index} {...exp} />
             ))}
