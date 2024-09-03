@@ -4,9 +4,11 @@ import CapitalizedText from '../CapitalizedText';
 import data from '@/IlorezData/ilorez.json';
 import IconWithVerticalLine from '../IconWithVerticalLine';
 import ExperienceCard, { ExperienceProps } from '../ExperieceCard';
+import EducationCard, { EducationProps } from '../EducationCard';
 
 const Experience: React.FC = () => {
   const experiences: ExperienceProps[] = data.experiences as ExperienceProps[];
+  const educations: EducationProps[] = data.educations as EducationProps[];
   return (
     <div className="flex flex-row gap-6 h-fit">
       {/* the line */}
@@ -21,7 +23,7 @@ const Experience: React.FC = () => {
         {/* Experiences */}
         <div className="flex flex-col gap-2">
           <CapitalizedText
-            text="experience"
+            text="experiences"
             cap_color="text-i-experience-via"
             light_color="text-light-experience"
           />
@@ -30,6 +32,20 @@ const Experience: React.FC = () => {
               <ExperienceCard key={index} {...exp} />
             ))}
           </div>
+        </div>
+        {/* Education */}
+        <div className="flex flex-col gap-2">
+        <CapitalizedText
+            text="Educations"
+            cap_color="text-i-experience-via"
+            light_color="text-light-experience"
+          />
+        <div className='flex flex-wrap w-full gap-2'>
+          {educations.map((edu, index) => (
+            <EducationCard key={index} {...edu} />
+          ))}
+        </div>
+
         </div>
       </div>
     </div>
