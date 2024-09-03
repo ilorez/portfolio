@@ -120,7 +120,6 @@
         "level": "90%"
       }
     ],
-
     "Design": [
       {
         "name": "Adobe Photoshop",
@@ -245,10 +244,10 @@
     "stackoverflow": "https://stackoverflow.com/users/20989747/ilorez",
     "MonkeyType": "https://monkeytype.com/profile/ilorez"
   },
-  "education": [
+  "educations": [
     {
       "degree": "Technician Specialize",
-      "major": "Development digital", 
+      "major": "Development digital",
       "school": "Ista NTIC SYBA",
       "location": "Morocco",
       "start_date": "January 2022",
