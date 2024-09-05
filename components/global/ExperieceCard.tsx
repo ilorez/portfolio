@@ -39,7 +39,7 @@ const ExperienceCard = ({
   return (
     <Card className="w-[500px] max-w-[500px] bg-i-experience-bg flex flex-col gap-2 border-none shadow-none outline-none">
       <CardHeader className="w-full flex flex-col gap-4">
-        <Badge variant="outline" className="w-fit flex gap-2 text-i-experience-date border-i-experience-date rounded-sm">
+        <Badge variant="outline" className="w-fit flex gap-1 text-i-experience-date border-i-experience-date rounded-sm">
           <span>{start_date}</span><span>-</span><span>{end_date}</span>
         </Badge>
         <div className="w-full flex flex-col">
