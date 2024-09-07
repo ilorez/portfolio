@@ -150,20 +150,6 @@
         "level": "90%"
       }
     ],
-    "Languages": [
-      {
-        "name": "English",
-        "level": "90%"
-      },
-      {
-        "name": "French",
-        "level": "60%"
-      },
-      {
-        "name": "Arabic",
-        "level": "90%"
-      }
-    ],
     "Tools": [
       {
         "name": "Visual Studio Code",
@@ -221,6 +207,20 @@
       }
     ]
   },
+  "Languages": [
+    {
+      "name": "English",
+      "level": "90%"
+    },
+    {
+      "name": "French",
+      "level": "60%"
+    },
+    {
+      "name": "Arabic",
+      "level": "90%"
+    }
+  ],
   "fun_facts": [
     {
       "icon": "footprints",
