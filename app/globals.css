@@ -4,7 +4,6 @@
 
 @layer base {
   :root {
-    /* --background: 165 9% 18%; */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -80,7 +79,6 @@
     --light-about: 162 35% 82%;
     --light-experience: 12 49% 85%;
 
-
     --i-about-from: 160 29% 66%;
     --i-about-via: 163 74% 45%;
     --i-about-to: 160 29% 66%;
@@ -96,13 +94,16 @@
   }
 }
 
-
 @layer base {
   * {
     @apply border-border;
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply min-h-screen bg-background text-foreground antialiased;
   }
 }

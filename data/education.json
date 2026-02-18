@@ -1,0 +1,19 @@
+[
+  {
+    "degree": "Technician Specialize",
+    "major": "Development digital",
+    "school": "Ista NTIC SYBA",
+    "location": "Morocco",
+    "start_date": "January 2022",
+    "end_date": "December 2024",
+    "description": "In My time at OFPPT I learned a lot of things about web development, building websites, and more."
+  },
+  {
+    "degree": "High School Diploma",
+    "school": "Tassoultanet High School",
+    "location": "Morocco",
+    "start_date": "January 2020",
+    "end_date": "December 2021",
+    "description": "This days were the best days of my life."
+  }
+]

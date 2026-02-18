@@ -3,10 +3,11 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
 import { primaryFont } from '@/app/fonts';
+import { profile } from '@/data';
 
 export const metadata: Metadata = {
-  title: 'Ilorez',
-  description: 'ilorez portfolio'
+  title: `${profile.username} — Portfolio`,
+  description: profile.bio,
 };
 
 export default function RootLayout({

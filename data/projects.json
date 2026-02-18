@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Kouralink",
+    "description": "KouraLink is a platform for football enthusiasts. It connects players and teams from all over the world, allowing them to form teams, organize matches, and participate in tournaments.",
+    "image": "https://avatars.githubusercontent.com/u/161023217?s=200&v=4",
+    "link": "https://kouralink.vercel.app",
+    "github": "https://github.com/kouralink",
+    "tags": ["React", "Node.js", "Express", "MongoDB"],
+    "Icon": "https://kouralink.vercel.app/logo.svg",
+    "background": "https://kouralink.vercel.app/png.png"
+  },
+  {
+    "title": "Scrapy",
+    "description": "Scrapy is a web scraping tool that allows you to extract data from some websites. It's fast, powerful, and easy to use.",
+    "image": "https://avatars.githubusercontent.com/u/162126226?s=200&v=4",
+    "link": "https://scrapyab.vercel.app/scrapy",
+    "github": "https://github.com/Allobaba-WebScrapy"
+  },
+  {
+    "title": "HandyScript",
+    "description": "A set of useful Javascript modules that extends the javascript core context.",
+    "image": "https://avatars.githubusercontent.com/u/133532543?s=200&v=4",
+    "link": "https://www.handyscript.tech/",
+    "github": "https://github.com/handyscript/handyscript"
+  }
+]

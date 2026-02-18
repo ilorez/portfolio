@@ -1,105 +1,86 @@
+'use client';
+
 import Image from 'next/image';
-
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { profile, socials } from '@/data';
+import { socialIconsMap } from '../Icons';
+import { Link2, Mouse } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
-import my_profile_image from '/public/znajdaou.jpg';
-import bg_image from '/public/background.jpg';
-import {
-  Github,
-  Discord,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Stackoverflow,
-  Twitter
-} from '../Icons';
-import { Mouse } from 'lucide-react';
-
-const socials = [
-  {
-    name: 'github',
-    link: 'https://github.com/ilorez',
-    icon: Github
-  },
-  {
-    name: 'linkedin',
-    link: 'https://www.linkedin.com/in/zobair-najdaoui-7b7b6b1b2/',
-    icon: Linkedin
-  },
-  {
-    name: 'twitter',
-    link: 'https://twitter.com/zobair_najdaoui',
-    icon: Twitter
-  },
-  {
-    name: 'stackoverflow',
-    link: 'https://stackoverflow.com/users/14309191/zobair-najdaoui',
-    icon: Stackoverflow
-  },
-  {
-    name: 'instagram',
-    link: 'https://www.instagram.com/zobair_najdaoui/',
-    icon: Instagram
-  },
-  {
-    name: 'facebook',
-    link: 'https://www.facebook.com/zobair.najdaoui',
-    icon: Facebook
-  },
-  {
-    name: 'discord',
-    link: 'https://discord.gg/8HvX7sZ',
-    icon: Discord
-  }
-];
+const ICON_SIZE = '28';
 
 export default function Header() {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${bg_image.src})`
-      }}
-      className="h-[75vh] relative bg-cover bg-center p-0 m-0 text-white"
+    <section
+      className={cn(
+        'relative min-h-[75vh] w-full overflow-hidden',
+        'bg-cover bg-center bg-no-repeat',
+        'text-white'
+      )}
+      style={{ backgroundImage: `url(${profile.cover_picture})` }}
     >
-      <div className="p-10 w-full h-full flex flex-col gap-2 items-center bg-black bg-opacity-80  ">
-        <div className="pl-24 w-full h-full flex   justify-around items-center">
-          <div className="capitalize flex flex-col gap-6 text-3xl items-center ">
-            <span >Najdaoui Zobair</span>
-            <span className="text-primary">
-              Full-Stack Developer
-            </span>
+      {/* Backdrop blur overlay for readability and dark/light balance */}
+      <div
+        className={cn(
+          'absolute inset-0 z-0',
+          'bg-background/80 backdrop-blur-sm',
+          'dark:bg-black/70'
+        )}
+      />
+      <div className="relative z-10 flex min-h-[75vh] w-full flex-col items-center justify-center gap-8 p-8 md:p-12">
+        <div className="flex w-full max-w-4xl flex-col items-center gap-10 md:flex-row md:justify-around md:gap-12">
+          {/* Name + title */}
+          <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+            <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+              {profile.first_name} {profile.last_name}
+            </h1>
+            <p className="text-xl text-primary md:text-2xl">
+              {profile.Jobs[0] ?? 'Developer'}
+            </p>
           </div>
-          <div className={'flex flex-col gap-6 items-center'}>
-            <div>
-              <Avatar className="w-[200px] h-auto">
-                <AvatarImage src={my_profile_image.src} alt="zobair najdaoui" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-            </div>
-            <div>
-              {/* links */}
-              <ul className="flex gap-3 ">
-                {socials.map((social) => (
-                  <li key={social.name}>
-                    {/* // make svg white */}
+
+          {/* Avatar + socials */}
+          <div className="flex flex-col items-center gap-6">
+            <Avatar className="h-40 w-40 border-4 border-border shadow-xl md:h-48 md:w-48">
+              <AvatarImage
+                src={profile.profile_picture}
+                alt={`${profile.first_name} ${profile.last_name}`}
+              />
+              <AvatarFallback className="text-lg text-foreground">
+                {profile.first_name[0]}
+                {profile.last_name[0]}
+              </AvatarFallback>
+            </Avatar>
+            <ul className="flex flex-wrap justify-center gap-4" aria-label="Social links">
+              {socials.map((social) => {
+                const IconComponent = socialIconsMap[social.id];
+                const Icon = IconComponent ?? Link2;
+                return (
+                  <li key={social.id}>
                     <a
-                      href={social.link}
+                      href={social.url}
                       target="_blank"
-                      rel="noreferrer"
-                      // className="[&>svg]:fill-white"
+                      rel="noreferrer noopener"
+                      className={cn(
+                        'flex items-center justify-center rounded-lg p-2',
+                        'text-muted-foreground hover:text-foreground hover:bg-accent/50',
+                        'transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background'
+                      )}
+                      aria-label={social.name}
                     >
-                      <social.icon size="25" />
+                      <Icon color="currentColor" size={ICON_SIZE} />
                     </a>
                   </li>
-                ))}
-              </ul>
-            </div>
+                );
+              })}
+            </ul>
           </div>
         </div>
-        <Mouse size={40}  />
+        <Mouse
+          className="h-8 w-8 shrink-0 text-muted-foreground"
+          aria-hidden
+        />
       </div>
-    </div>
+    </section>
   );
 }
-
-

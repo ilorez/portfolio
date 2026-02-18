@@ -133,6 +133,20 @@ export function Discord({ color = 'currentColor', size }: IconProps) {
   );
 }
 
+/** Map social id (from data/socials.json) to icon component for hero/links */
+export const socialIconsMap: Record<string, React.FC<IconProps>> = {
+  github: Github,
+  linkedin: Linkedin,
+  twitter: Twitter,
+  facebook: Facebook,
+  instagram: Instagram,
+  discord: Discord,
+  stackoverflow: Stackoverflow,
+  codepen: Github, // fallback if you add a CodePen icon later
+  dev: Github,
+  medium: Github,
+};
+
 export function Cat_Happy({ color = 'currentColor', size }: IconProps) {
   return (
     <svg

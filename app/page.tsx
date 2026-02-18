@@ -1,22 +1,29 @@
 'use client';
+
 import Header from '@/components/global/homepage/header';
 import Navbar from '@/components/global/Navbar';
 import About from '@/components/global/homepage/About';
 import Experience from '@/components/global/homepage/Exprience';
-// create a home page for my portfolio
+
 export default function Home() {
   return (
-    <div className="h-[200vh]">
-      <Header />
-      <div className="fixed top-0 m-6  z-10">
+    <>
+      <header className="fixed top-0 left-0 z-20 p-4 md:p-6">
         <Navbar />
-      </div>
-      <div className="flex flex-col m-6 w-fit items-start mt-6">
-        <div className="flex flex-col pl-6 w-full gap-8">
-          <About />
-          <Experience />
+      </header>
+
+      <main>
+        <Header />
+        <div className="mx-auto max-w-5xl px-4 py-12 md:px-8 md:py-16">
+          <section id="about" className="scroll-mt-24 pb-12 md:pb-16">
+            <About />
+          </section>
+          <section id="experience" className="scroll-mt-24 pb-12 md:pb-16">
+            <Experience />
+          </section>
+          {/* Future: <section id="projects">, <section id="contact"> */}
         </div>
-      </div>
-    </div>
+      </main>
+    </>
   );
 }
