@@ -1,12 +1,7 @@
 [
-  { "id": "github", "name": "GitHub", "url": "https://github.com/ilorez" },
-  { "id": "linkedin", "name": "LinkedIn", "url": "https://www.linkedin.com/in/zobair-najdaoui-1b7687274/" },
-  { "id": "twitter", "name": "Twitter", "url": "https://x.com/Z_Najdaoui" },
-  { "id": "instagram", "name": "Instagram", "url": "https://www.instagram.com/ilorze/" },
-  { "id": "facebook", "name": "Facebook", "url": "https://www.facebook.com/ilorez/" },
-  { "id": "codepen", "name": "CodePen", "url": "https://codepen.io/ilorez" },
-  { "id": "dev", "name": "Dev.to", "url": "https://dev.to/ilorez" },
-  { "id": "medium", "name": "Medium", "url": "https://ilorez.medium.com/" },
-  { "id": "discord", "name": "Discord", "url": "https://discord.gg/5FrQz483" },
-  { "id": "stackoverflow", "name": "Stack Overflow", "url": "https://stackoverflow.com/users/20989747/ilorez" }
+  {"id":"github","name":"GitHub","url":"https://github.com/ilorez"},
+  {"id":"linkedin","name":"LinkedIn","url":"https://www.linkedin.com/in/ilorez/"},
+  {"id":"instagram","name":"Instagram","url":"https://www.instagram.com/ilorze/"},
+  {"id":"discord","name":"Discord @ilorz","url":"https://discord.com"},
+  {"id":"monkeytype","name":"Monkeytype","url":"https://monkeytype.com/profile/ilorez"}
 ]

@@ -2,13 +2,13 @@
   "username": "Ilorez",
   "first_name": "Zobair",
   "last_name": "Najdaoui",
-  "email": "zobirnadaoui@gmail.com",
+  "email": "zobirnajdaoui@gmail.com",
   "phone": "",
   "address": "Morocco, Marrakech",
   "website": "https://najdaoui.me",
   "Jobs": ["Full-Stack Developer", "MERN Stack Developer", "Freelancer", "Designer"],
   "bio": "I'm a full-stack developer, I love to build things and solve problems. I'm passionate about technology and I'm always looking for new things to learn.",
-  "profile_picture": "/znajdaou.jpg",
+  "profile_picture": "/profile.jpg",
   "cover_picture": "/background.jpg",
   "resume": "/zobair_najdaoui_cv.pdf"
 }

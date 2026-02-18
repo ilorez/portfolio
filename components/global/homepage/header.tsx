@@ -45,6 +45,7 @@ export default function Header() {
               <AvatarImage
                 src={profile.profile_picture}
                 alt={`${profile.first_name} ${profile.last_name}`}
+                className="object-cover scale-150"
               />
               <AvatarFallback className="text-lg text-foreground">
                 {profile.first_name[0]}
