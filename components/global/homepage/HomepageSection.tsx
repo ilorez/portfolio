@@ -30,12 +30,12 @@ const THEME_STYLES: Record<
     titleLight: 'text-light-primary',
   },
   experience: {
-    titleCap: 'text-primary',
-    titleLight: 'text-light-primary',
+    titleCap: 'text-amber-600 dark:text-amber-400',
+    titleLight: 'text-amber-700 dark:text-amber-300',
   },
   primary: {
-    titleCap: 'text-primary',
-    titleLight: 'text-light-primary',
+    titleCap: 'text-violet-600 dark:text-violet-400',
+    titleLight: 'text-violet-700 dark:text-violet-300',
   },
 };
 
@@ -171,9 +171,9 @@ export default function HomepageSection({
   })();
 
   return (
-    <div className="flex flex-row gap-6 h-fit">
-      <IconWithVerticalLine icon={iconName} iconSize={28} />
-      <div className="flex flex-col gap-5 min-w-0 flex-1">
+    <div className="flex flex-row gap-6 items-stretch min-h-0">
+      <IconWithVerticalLine icon={iconName} iconSize={28} theme={section.theme} />
+      <div className="flex flex-col gap-5 min-w-0 flex-1 pb-1">
         <div className="flex flex-col gap-2">
           <CapitalizedText
             text={section.title}

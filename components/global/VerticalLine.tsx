@@ -4,14 +4,12 @@ interface VerticalLineProps {
   className?: string;
 }
 
-/** Single unified style for all section left lines. */
+/** Vertical line that fills available height — use with flex-1 in parent. */
 const VerticalLine = ({ className }: VerticalLineProps) => (
-  <div className="flex items-center justify-center h-full min-h-[2rem]">
+  <div className="flex-1 min-h-[1.5rem] w-full flex justify-center self-stretch">
     <div
       className={cn(
-        'w-1 rounded-full min-h-[2rem] flex-1',
-        'bg-gradient-to-b from-primary/30 via-primary to-primary/30',
-        'dark:from-primary/40 dark:via-primary dark:to-primary/40',
+        'w-1 rounded-full h-full min-h-[1.5rem]',
         className
       )}
       aria-hidden
