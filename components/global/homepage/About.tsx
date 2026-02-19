@@ -13,8 +13,7 @@ export default function About() {
       <IconWithVerticalLine
         icon="user"
         iconSize={30}
-        shadow="shadow-i-about-from/50"
-        className="bg-gradient-to-b from-i-about-from via-i-about-via to-i-about-to"
+        theme="about"
       />
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">

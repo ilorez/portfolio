@@ -9,10 +9,9 @@ export default function Experience() {
   return (
     <div className="flex flex-row gap-6 h-fit">
       <IconWithVerticalLine
-        icon="briefcase-business"
+        icon="briefcase"
         iconSize={30}
-        shadow="shadow-i-experience-from/50"
-        className="bg-gradient-to-b from-i-experience-from via-i-experience-via to-i-experience-to"
+        theme="experience"
       />
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">
