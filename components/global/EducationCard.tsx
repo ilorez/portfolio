@@ -4,9 +4,9 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription
+  CardDescription,
 } from '@/components/ui/card';
-import { Badge } from '../ui/badge';
+import { cn } from '@/lib/utils';
 
 export interface EducationProps {
   degree: string;
@@ -30,41 +30,43 @@ const EducationCard = ({
   description = '',
   activities,
   skills,
-}: EducationProps) => {
-  return (
-    <Card className="w-[450px] max-w-[500px] bg-i-experience-bg flex flex-col gap-2 border-none shadow-none outline-none">
-      <CardHeader className="w-full flex flex-col gap-4">
-        <Badge variant="outline" className="w-fit flex gap-1 text-i-experience-date border-i-experience-date rounded-sm">
-          <span>{start_date}</span><span>-</span><span>{end_date}</span>
-        </Badge>
-        <div className="w-full flex flex-col">
-          <CardTitle className="w-full text-xl">
-            {degree}{major !== '' && <span> in {major}</span>}
-          </CardTitle>
-          <CardDescription>
-            {school}{location ? ` (${location})` : ''}
-          </CardDescription>
-        </div>
-      </CardHeader>
-      <CardContent className="w-full space-y-2">
-        {description && <p>{description}</p>}
-        {skills && skills.length > 0 && (
-          <div className="flex flex-wrap gap-1">
-            {skills.map((s) => (
-              <Badge key={s} variant="secondary" className="text-xs font-normal">
-                {s}
-              </Badge>
-            ))}
-          </div>
-        )}
-        {activities && activities.length > 0 && (
-          <p className="text-sm text-muted-foreground">
-            {activities.join(' · ')}
-          </p>
-        )}
-      </CardContent>
-    </Card>
-  );
-};
+}: EducationProps) => (
+  <Card
+    className={cn(
+      'w-full max-w-xl rounded-xl border border-border bg-card p-5',
+      'shadow-sm transition-shadow hover:shadow-md',
+      'text-left'
+    )}
+  >
+    <CardHeader className="p-0 pb-3">
+      <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        {start_date} — {end_date}
+      </p>
+      <CardTitle className="text-lg font-semibold">
+        {degree}
+        {major ? ` in ${major}` : ''}
+      </CardTitle>
+      <CardDescription className="text-sm">
+        {school}
+        {location ? ` · ${location}` : ''}
+      </CardDescription>
+    </CardHeader>
+    <CardContent className="p-0 space-y-2">
+      {description ? (
+        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+      ) : null}
+      {skills && skills.length > 0 ? (
+        <p className="text-xs text-muted-foreground">
+          {skills.join(' · ')}
+        </p>
+      ) : null}
+      {activities && activities.length > 0 ? (
+        <p className="text-xs text-muted-foreground">
+          {activities.join(' · ')}
+        </p>
+      ) : null}
+    </CardContent>
+  </Card>
+);
 
 export default EducationCard;

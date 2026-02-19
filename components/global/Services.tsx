@@ -1,12 +1,8 @@
 import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Icon from '@/components/global/LucideIcon';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
+import { cn } from '@/lib/utils';
 
 export interface Service {
   title: string;
@@ -14,18 +10,26 @@ export interface Service {
   icon: keyof typeof dynamicIconImports;
 }
 
-const Services = ({ title, description, icon }: Service) => {
-  return (
-    <Card className="w-[400px] max-w-[400px] bg-i-services-bg flex flex-col gap-2 justify-center border-none shadow-none outline-none">
-      <CardHeader className='w-full flex flex-col justify-center items-center '>
-        <Icon name={icon} className='text-i-services-icon' size={40} />
-        <CardTitle>{title}</CardTitle>
-      </CardHeader>
-      <CardContent className='w-full text-center'>
-            {description}
-      </CardContent>
-    </Card>
-  );
-};
+const Services = ({ title, description, icon }: Service) => (
+  <Card
+    className={cn(
+      'w-full max-w-sm rounded-xl border border-border bg-card p-5',
+      'shadow-sm transition-shadow hover:shadow-md',
+      'text-left'
+    )}
+  >
+    <CardHeader className="p-0 pb-3">
+      <div className="flex items-center gap-3">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <Icon name={icon} size={22} />
+        </div>
+        <CardTitle className="text-base font-semibold">{title}</CardTitle>
+      </div>
+    </CardHeader>
+    <CardContent className="p-0">
+      <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+    </CardContent>
+  </Card>
+);
 
 export default Services;

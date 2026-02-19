@@ -13,6 +13,8 @@ import ProjectCard from '../ProjectCard';
 import CertificationCard from '../CertificationCard';
 import SkillsBlock from '../SkillsBlock';
 import ContactCard from '../ContactCard';
+import { Button } from '@/components/ui/button';
+import { FileDown } from 'lucide-react';
 import type { HomepageSectionConfig, SectionTheme } from '@/data/homepage-sections';
 import type { Service, Experience, Education, FunFact as FunFactType, Project, Certification } from '@/data/types';
 import type { SkillsByCategory } from '@/data/types';
@@ -21,23 +23,17 @@ import { thirdFont } from '@/app/fonts';
 
 const THEME_STYLES: Record<
   SectionTheme,
-  { lineClassName: string; shadow: string; titleCap: string; titleLight: string }
+  { titleCap: string; titleLight: string }
 > = {
   about: {
-    lineClassName: 'bg-gradient-to-b from-i-about-from via-i-about-via to-i-about-to',
-    shadow: 'shadow-i-about-from/50',
     titleCap: 'text-primary',
     titleLight: 'text-light-primary',
   },
   experience: {
-    lineClassName: 'bg-gradient-to-b from-i-experience-from via-i-experience-via to-i-experience-to',
-    shadow: 'shadow-i-experience-from/50',
-    titleCap: 'text-i-experience-via',
-    titleLight: 'text-light-experience',
+    titleCap: 'text-primary',
+    titleLight: 'text-light-primary',
   },
   primary: {
-    lineClassName: 'bg-gradient-to-b from-primary/90 via-primary to-primary/90',
-    shadow: 'shadow-primary/30',
     titleCap: 'text-primary',
     titleLight: 'text-light-primary',
   },
@@ -65,13 +61,27 @@ export default function HomepageSection({
     if (section.id === 'about') {
       const text = descriptionOverride ?? profile.bio;
       return (
-        <p className="text-justify text-lg max-w-[800px]">
-          I&apos;m{' '}
-          <span className={cn('text-primary', thirdFont.className)}>
-            {profile.first_name} {profile.last_name}
-          </span>
-          , {text}
-        </p>
+        <div className="flex flex-col gap-4 max-w-[800px]">
+          <p className="text-justify text-lg">
+            I&apos;m{' '}
+            <span className={cn('text-primary', thirdFont.className)}>
+              {profile.first_name} {profile.last_name}
+            </span>
+            , {text}
+          </p>
+          <a
+            href={profile.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-fit"
+            aria-label="View or download CV"
+          >
+            <Button variant="outline" size="lg" className="gap-2">
+              <FileDown className="h-5 w-5" />
+              View / Download CV
+            </Button>
+          </a>
+        </div>
       );
     }
 
@@ -162,12 +172,7 @@ export default function HomepageSection({
 
   return (
     <div className="flex flex-row gap-6 h-fit">
-      <IconWithVerticalLine
-        icon={iconName}
-        iconSize={30}
-        shadow={themeStyles.shadow}
-        className={themeStyles.lineClassName}
-      />
+      <IconWithVerticalLine icon={iconName} iconSize={28} />
       <div className="flex flex-col gap-5 min-w-0 flex-1">
         <div className="flex flex-col gap-2">
           <CapitalizedText

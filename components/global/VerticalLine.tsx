@@ -1,18 +1,22 @@
 import { cn } from '@/lib/utils';
-import React from 'react';
 
 interface VerticalLineProps {
   className?: string;
 }
 
-const VerticalLine = ({ className }: VerticalLineProps) => {
-return (
- <div className="flex items-center justify-center h-full">
- <div
- className={cn(`w-vertical-line h-full rounded-full shadow-xl shadow-i-about-from/50`, className)}
- ></div>
- </div>
-  );
- };
+/** Single unified style for all section left lines. */
+const VerticalLine = ({ className }: VerticalLineProps) => (
+  <div className="flex items-center justify-center h-full min-h-[2rem]">
+    <div
+      className={cn(
+        'w-1 rounded-full min-h-[2rem] flex-1',
+        'bg-gradient-to-b from-primary/30 via-primary to-primary/30',
+        'dark:from-primary/40 dark:via-primary dark:to-primary/40',
+        className
+      )}
+      aria-hidden
+    />
+  </div>
+);
 
 export default VerticalLine;

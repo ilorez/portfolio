@@ -4,33 +4,16 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Cat_Sad, Cat_Very_Happy } from './Icons';
-import { AtSign, Briefcase, ChevronDown, FerrisWheel, Lightbulb, Menu, TextSelect, User, X } from 'lucide-react';
+import { AtSign, Briefcase, FerrisWheel, Lightbulb, Menu, X } from 'lucide-react';
 import { ModeToggle } from '../mode-toggle';
 import { profile } from '@/data';
-import { HOMEPAGE_SECTIONS } from '@/data/homepage-sections';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 
 const NAV_LINKS = [
-  { href: '#about', label: 'About', icon: User },
-  { href: '/', label: 'Resume', icon: TextSelect },
   { href: '#projects', label: 'Projects', icon: Lightbulb },
   { href: '/', label: 'Blogs', icon: FerrisWheel },
   { href: '#experience', label: 'Experience', icon: Briefcase },
   { href: '#contact', label: 'Contact', icon: AtSign },
 ] as const;
-
-function sectionLabel(section: (typeof HOMEPAGE_SECTIONS)[number]): string {
-  const labels: Record<string, string> = {
-    'fun-facts': 'Fun Facts',
-    'skills': 'Skills',
-  };
-  return labels[section.id] ?? section.title;
-}
 
 const NAVBAR_HEIGHT = 'h-14';
 
@@ -143,7 +126,7 @@ export default function Navbar() {
           </span>
         </button>
 
-        {/* Center: Sections dropdown + nav links — hidden when collapsed */}
+        {/* Center: Nav links — hidden when collapsed */}
         <ul
           className={cn(
             'hidden md:flex items-center gap-1 lg:gap-2 flex-1 justify-center min-w-0',
@@ -151,31 +134,6 @@ export default function Navbar() {
             collapsed ? 'opacity-0 w-0 min-w-0 overflow-hidden pointer-events-none' : 'opacity-100'
           )}
         >
-          <li>
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className={cn(
-                  'group flex items-center gap-1.5 py-2 px-3 rounded-lg whitespace-nowrap outline-none',
-                  'text-muted-foreground hover:text-foreground hover:bg-accent/30',
-                  'focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
-                  'transition-colors duration-200 data-[state=open]:bg-accent/30 data-[state=open]:text-foreground'
-                )}
-                aria-label="Jump to section"
-              >
-                <span className="text-sm font-medium">Sections</span>
-                <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="min-w-[11rem] max-h-[min(70vh,20rem)] overflow-y-auto">
-                {HOMEPAGE_SECTIONS.map((section) => (
-                  <DropdownMenuItem key={section.id} asChild>
-                    <Link href={`#${section.id}`} className="flex cursor-pointer items-center">
-                      {sectionLabel(section)}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </li>
           {NAV_LINKS.map(({ href, label, icon: Icon }) => (
             <li key={label}>
               <Link
@@ -231,54 +189,25 @@ export default function Navbar() {
           mobileMenuOpen ? 'max-h-[min(70vh,28rem)] opacity-100' : 'max-h-0 opacity-0'
         )}
       >
-        <div className="overflow-y-auto max-h-[min(70vh,28rem)] px-2 py-3">
-          <DropdownMenu>
-            <DropdownMenuTrigger
-              className={cn(
-                'flex w-full items-center justify-between gap-2 py-2.5 px-3 rounded-lg outline-none',
-                'text-muted-foreground hover:text-foreground hover:bg-accent/30',
-                'focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
-                'transition-colors duration-200 data-[state=open]:bg-accent/30 data-[state=open]:text-foreground'
-              )}
-              aria-label="Jump to section"
-            >
-              <span className="text-sm font-medium">Sections</span>
-              <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 data-[state=open]:rotate-180" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" side="bottom" className="ml-2 min-w-[11rem] max-h-[16rem] overflow-y-auto">
-              {HOMEPAGE_SECTIONS.map((section) => (
-                <DropdownMenuItem key={section.id} asChild>
-                  <Link
-                    href={`#${section.id}`}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex cursor-pointer items-center"
-                  >
-                    {sectionLabel(section)}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-          <ul className="flex flex-col gap-0.5 pt-1 mt-1 border-t border-border/60">
-            {NAV_LINKS.map(({ href, label, icon: Icon }) => (
-              <li key={label}>
-                <Link
-                  href={href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    'group flex items-center gap-2 py-2.5 px-3 rounded-lg',
-                    'text-muted-foreground hover:text-foreground hover:bg-accent/30',
-                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
-                    'transition-colors duration-200'
-                  )}
-                >
-                  <Icon className="h-4 w-4 shrink-0" />
-                  <span className="text-sm font-medium">{label}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="flex flex-col gap-0.5 px-2 py-3">
+          {NAV_LINKS.map(({ href, label, icon: Icon }) => (
+            <li key={label}>
+              <Link
+                href={href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={cn(
+                  'group flex items-center gap-2 py-2.5 px-3 rounded-lg',
+                  'text-muted-foreground hover:text-foreground hover:bg-accent/30',
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+                  'transition-colors duration-200'
+                )}
+              >
+                <Icon className="h-4 w-4 shrink-0" />
+                <span className="text-sm font-medium">{label}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );

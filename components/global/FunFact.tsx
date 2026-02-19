@@ -1,28 +1,31 @@
 import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Icon from '@/components/global/LucideIcon';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
+import { cn } from '@/lib/utils';
 
 export interface FunFact {
   icon: keyof typeof dynamicIconImports;
   text: string;
 }
 
-const FunFacts = ({ text, icon }: FunFact) => {
-  return (
-    <Card className="w-[250px] max-w-[250px] bg-i-fun-facts-bg flex flex-col gap-2 justify-center border-none shadow-none outline-none">
-      <CardHeader className='w-full flex flex-col justify-center items-center '>
-        <Icon name={icon} className='text-i-fun-facts-icon' size={40} />
-      </CardHeader>
-      <CardContent className='w-full text-center'>
-            {text}
-      </CardContent>
-    </Card>
-  );
-};
+const FunFacts = ({ text, icon }: FunFact) => (
+  <Card
+    className={cn(
+      'w-full max-w-xs rounded-xl border border-border bg-card p-5',
+      'shadow-sm transition-shadow hover:shadow-md',
+      'text-left'
+    )}
+  >
+    <CardHeader className="p-0 pb-3">
+      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+        <Icon name={icon} size={22} />
+      </div>
+    </CardHeader>
+    <CardContent className="p-0">
+      <p className="text-sm text-muted-foreground leading-relaxed">{text}</p>
+    </CardContent>
+  </Card>
+);
 
 export default FunFacts;
