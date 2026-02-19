@@ -3,7 +3,7 @@
  * titles, icons, and which data to render. Content is resolved from @/data.
  */
 
-export type SectionTheme = 'about' | 'experience' | 'primary';
+export type SectionTheme = 'about' | 'experience' | 'primary' | 'work' | 'contact';
 
 export type SectionCardType =
   | 'service'
@@ -30,6 +30,14 @@ export interface HomepageSectionConfig {
 }
 
 export const HOMEPAGE_SECTIONS: HomepageSectionConfig[] = [
+  {
+    id: 'projects',
+    title: 'Projects',
+    icon: 'lightbulb',
+    theme: 'work',
+    dataKey: 'projects',
+    cardType: 'project',
+  },
   {
     id: 'about',
     title: 'About Me',
@@ -70,12 +78,12 @@ export const HOMEPAGE_SECTIONS: HomepageSectionConfig[] = [
     cardType: 'education',
   },
   {
-    id: 'projects',
-    title: 'Projects',
-    icon: 'lightbulb',
+    id: 'certifications',
+    title: 'Certifications',
+    icon: 'award',
     theme: 'primary',
-    dataKey: 'projects',
-    cardType: 'project',
+    dataKey: 'certifications',
+    cardType: 'certification',
   },
   {
     id: 'skills',
@@ -86,18 +94,10 @@ export const HOMEPAGE_SECTIONS: HomepageSectionConfig[] = [
     cardType: 'skillCategory',
   },
   {
-    id: 'certifications',
-    title: 'Certifications',
-    icon: 'award',
-    theme: 'primary',
-    dataKey: 'certifications',
-    cardType: 'certification',
-  },
-  {
     id: 'contact',
     title: 'Contact',
     icon: 'mail',
-    theme: 'primary',
+    theme: 'contact',
     description: '', // filled with email + CTA in component
   },
 ];

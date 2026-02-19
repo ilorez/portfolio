@@ -15,7 +15,9 @@ export default function Home() {
       </header>
 
       <main>
-        <Header />
+        <section id="hero" className="scroll-mt-24">
+          <Header />
+        </section>
         <div className="mx-auto max-w-5xl px-4 py-12 md:px-8 md:py-16">
           {HOMEPAGE_SECTIONS.map((section) => {
             const dataKey = section.dataKey;

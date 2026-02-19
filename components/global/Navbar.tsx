@@ -4,14 +4,15 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Cat_Sad, Cat_Very_Happy } from './Icons';
-import { AtSign, Briefcase, FerrisWheel, Lightbulb, Menu, X } from 'lucide-react';
+import { AtSign, Briefcase, FerrisWheel, Lightbulb, Menu, User, X } from 'lucide-react';
 import { ModeToggle } from '../mode-toggle';
 import { profile } from '@/data';
 
 const NAV_LINKS = [
-  { href: '#projects', label: 'Projects', icon: Lightbulb },
-  { href: '/', label: 'Blogs', icon: FerrisWheel },
-  { href: '#experience', label: 'Experience', icon: Briefcase },
+  { href: '#projects', label: 'Work', icon: Lightbulb },
+  { href: '/', label: 'Blog', icon: FerrisWheel },
+  { href: '#about', label: 'About', icon: User },
+  { href: '#experience', label: 'Resume', icon: Briefcase },
   { href: '#contact', label: 'Contact', icon: AtSign },
 ] as const;
 
@@ -72,6 +73,7 @@ export default function Navbar() {
   const isMenuOpen = mobileMenuOpen;
 
   const handleCatClick = () => {
+    document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
     setCollapsed((c) => !c);
     if (!collapsed) setMobileMenuOpen(false);
   };

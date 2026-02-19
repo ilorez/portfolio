@@ -37,6 +37,14 @@ const THEME_STYLES: Record<
     titleCap: 'text-violet-600 dark:text-violet-400',
     titleLight: 'text-violet-700 dark:text-violet-300',
   },
+  work: {
+    titleCap: 'text-teal-600 dark:text-teal-400',
+    titleLight: 'text-teal-700 dark:text-teal-300',
+  },
+  contact: {
+    titleCap: 'text-sky-600 dark:text-sky-400',
+    titleLight: 'text-sky-700 dark:text-sky-300',
+  },
 };
 
 export interface HomepageSectionProps {
