@@ -92,10 +92,15 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "scroll-indicator": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(0.375rem)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "scroll-indicator": "scroll-indicator 2s ease-in-out infinite",
       },
       width: {
         "vertical-line": "var(--i-vertical-line-width)",

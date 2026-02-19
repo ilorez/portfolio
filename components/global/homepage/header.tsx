@@ -27,7 +27,7 @@ export default function Header() {
           'dark:bg-black/70'
         )}
       />
-      <div className="relative z-10 flex min-h-[75vh] w-full flex-col items-center justify-center gap-8 p-8 md:p-12">
+      <div className="relative z-10 flex min-h-[75vh] w-full flex-col items-center justify-center gap-8 p-8 pb-16 md:p-12 md:pb-20">
         <div className="flex w-full max-w-4xl flex-col items-center gap-10 md:flex-row md:justify-around md:gap-12">
           {/* Name + title */}
           <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
@@ -77,10 +77,17 @@ export default function Header() {
             </ul>
           </div>
         </div>
-        <Mouse
-          className="h-8 w-8 shrink-0 text-muted-foreground"
-          aria-hidden
-        />
+      </div>
+
+      {/* Scroll indicator: bottom-center, subtle bounce */}
+      <div
+        className={cn(
+          'absolute bottom-6 left-1/2 z-10 -translate-x-1/2 md:bottom-8',
+          'text-muted-foreground'
+        )}
+        aria-hidden
+      >
+        <Mouse className="h-8 w-8 shrink-0 animate-scroll-indicator" />
       </div>
     </section>
   );
