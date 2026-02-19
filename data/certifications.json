@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Introduction to AI for Work",
+    "issuer": "DataCamp",
+    "date": "Jan 2026",
+    "credential_id": "7,475",
+    "skills": ["AI Agents", "Agentic AI Systems", "Prompt Frameworks", "LLMs", "Generative AI"],
+    "certificate_link": "https://example.com/certificate/datacamp-ai",
+    "logo": "https://via.placeholder.com/80?text=DataCamp"
+  },
+  {
+    "title": "Docker for Developers",
+    "issuer": "Educative",
+    "date": "Jan 2026",
+    "credential_id": "nZp3lEC3kDJM8O0jzIPv7l5qnnzoFQ",
+    "skills": ["Docker", "Application Deployment", "Microservices"],
+    "certificate_link": "https://example.com/certificate/educative-docker",
+    "logo": "https://via.placeholder.com/80?text=Educative"
+  }
+]

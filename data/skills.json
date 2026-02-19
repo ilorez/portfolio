@@ -1,48 +1,47 @@
 {
-  "Frontend": [
-    { "name": "HTML", "level": "90%" },
-    { "name": "CSS", "level": "90%" },
-    { "name": "JavaScript", "level": "90%" },
-    { "name": "React", "level": "90%" },
-    { "name": "Next.js", "level": "90%" }
+  "Languages & Frameworks": [
+    { "name": "C", "level": "Proficient" },
+    { "name": "C++", "level": "Proficient" },
+    { "name": "Python", "level": "Proficient" },
+    { "name": "JavaScript", "level": "Proficient" },
+    { "name": "TypeScript", "level": "Proficient" },
+    { "name": "MERN Stack", "level": "Proficient" },
+    { "name": "Node.js", "level": "Proficient" },
+    { "name": "React.js", "level": "Proficient" },
+    { "name": "Laravel", "level": "Proficient" },
+    { "name": "PHP", "level": "Proficient" },
+    { "name": "REST APIs", "level": "Proficient" },
+    { "name": "Next.js", "level": "Proficient" }
   ],
-  "Backend": [
-    { "name": "Node.js", "level": "90%" },
-    { "name": "Express", "level": "90%" },
-    { "name": "MongoDB", "level": "90%" },
-    { "name": "Firebase", "level": "90%" },
-    { "name": "MySQL", "level": "90%" },
-    { "name": "Python", "level": "90%" },
-    { "name": "PHP", "level": "90%" },
-    { "name": "Laravel", "level": "90%" }
+  "DevOps & Systems": [
+    { "name": "Linux", "level": "Proficient" },
+    { "name": "Bash", "level": "Proficient" },
+    { "name": "Shell Scripting", "level": "Proficient" },
+    { "name": "Networking", "level": "Proficient" },
+    { "name": "VM", "level": "Proficient" },
+    { "name": "Docker", "level": "Proficient" },
+    { "name": "Git", "level": "Proficient" },
+    { "name": "GitFlow", "level": "Proficient" }
   ],
-  "Design": [
-    { "name": "Adobe Photoshop", "level": "90%" },
-    { "name": "Adobe Illustrator", "level": "90%" },
-    { "name": "Figma", "level": "90%" }
+  "Soft Skills": [
+    { "name": "Problem Solving", "level": "" },
+    { "name": "Team Collaboration", "level": "" },
+    { "name": "Critical Thinking", "level": "" },
+    { "name": "Communication", "level": "" },
+    { "name": "Lifelong Learning", "level": "" },
+    { "name": "Innovation Research", "level": "" },
+    { "name": "UX", "level": "" }
   ],
-  "Other": [
-    { "name": "Git", "level": "90%" },
-    { "name": "Performance Optimization", "level": "90%" }
-  ],
-  "DevOps": [
-    { "name": "Docker", "level": "90%" }
-  ],
-  "Tools": [
-    { "name": "Visual Studio Code", "level": "90%" },
-    { "name": "Figma", "level": "90%" },
-    { "name": "Adobe Photoshop", "level": "90%" },
-    { "name": "Adobe Illustrator", "level": "90%" },
-    { "name": "Postman", "level": "90%" },
-    { "name": "Git", "level": "90%" },
-    { "name": "GitHub", "level": "90%" },
-    { "name": "Trello", "level": "90%" },
-    { "name": "Slack", "level": "90%" },
-    { "name": "Discord", "level": "90%" }
-  ],
-  "Linux": [
-    { "name": "Arch Linux", "level": "90%" },
-    { "name": "Kali Linux", "level": "90%" },
-    { "name": "Ubuntu", "level": "90%" }
+  "Tools & Technologies": [
+    { "name": "Selenium", "level": "Proficient" },
+    { "name": "Tkinter", "level": "Proficient" },
+    { "name": "Redux.js", "level": "Proficient" },
+    { "name": "Firebase", "level": "Proficient" },
+    { "name": "Microsoft Excel", "level": "Proficient" },
+    { "name": "Databases", "level": "Proficient" },
+    { "name": "JSON", "level": "Proficient" },
+    { "name": "Authorization", "level": "Proficient" },
+    { "name": "Secure Network Architecture", "level": "Proficient" },
+    { "name": "Agile Development", "level": "Proficient" }
   ]
 }

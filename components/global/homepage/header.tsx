@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { profile, socials } from '@/data';
 import { socialIconsMap } from '../Icons';

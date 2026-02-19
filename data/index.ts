@@ -13,6 +13,7 @@ import type {
   FunFact,
   Education,
   Experience,
+  Certification,
 } from './types';
 
 import profileData from './profile.json';
@@ -24,6 +25,7 @@ import languagesData from './languages.json';
 import funFactsData from './fun-facts.json';
 import educationData from './education.json';
 import experienceData from './experience.json';
+import certificationsData from './certifications.json';
 
 export type {
   ProfileInfo,
@@ -35,6 +37,7 @@ export type {
   FunFact,
   Education,
   Experience,
+  Certification,
 };
 
 export const profile = profileData as ProfileInfo;
@@ -46,6 +49,7 @@ export const languages = languagesData as Language[];
 export const funFacts = funFactsData as FunFact[];
 export const education = educationData as Education[];
 export const experience = experienceData as Experience[];
+export const certifications = certificationsData as Certification[];
 
 /** All data in one object for components that need it (e.g. legacy usage) */
 export const portfolio = {
@@ -58,4 +62,5 @@ export const portfolio = {
   funFacts,
   education,
   experience,
+  certifications,
 };

@@ -1,55 +1,77 @@
+'use client';
+
 import React from 'react';
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription
+  CardDescription,
 } from '@/components/ui/card';
-import Icon from '@/components/global/LucideIcon';
-import dynamicIconImports from 'lucide-react/dynamicIconImports';
-import { Badge } from '../ui/badge';
+import { Badge } from '@/components/ui/badge';
+import { ExternalLink, Github } from 'lucide-react';
+import type { Project } from '@/data/types';
 
-// {
-//   "title": "Développeur Full-Stack",
-//   "company": "AlloBaba",
-//   "location": "Morocco, Marrakech",
-//   "start_date": "Mars 2024",
-//   "end_date": "Avril 2024",
-//   "description": "AlloBaba est une agence internationale de communication web et marketing digital, offrant des solutions innovantes et un développement rapide pour des projets exigeants. En tant que développeur Full-Stack, j'étais responsable de la conception, du déploiement et de la maintenance d'applications web internes et externes."
-// },
+interface ProjectCardProps extends Project {}
 
-export interface ExperienceProps {
-  title: string;
-  description: string;
-  company: string;
-  location: string;
-  start_date: string;
-  end_date: string;
-}
-
-const ExperienceCard = ({
+const ProjectCard = ({
   title,
   description,
-  company,
-  location,
-  start_date,
-  end_date
-}: ExperienceProps) => {
+  link,
+  github,
+  tags,
+}: ProjectCardProps) => {
   return (
-    <Card className="w-[500px] max-w-[500px] bg-i-experience-bg flex flex-col gap-2 border-none shadow-none outline-none">
-      <CardHeader className="w-full flex flex-col gap-4">
-        <Badge variant="outline" className="w-fit flex gap-1 text-i-experience-date border-i-experience-date rounded-sm">
-          <span>{start_date}</span><span>-</span><span>{end_date}</span>
-        </Badge>
-        <div className="w-full flex flex-col">
-        <CardTitle className="w-full text-xl">{title}</CardTitle>
-        <CardDescription>{company} ({location})</CardDescription>
+    <Card
+      className={[
+        'w-full max-w-[500px] transition-all duration-200',
+        'bg-card border border-border/50 shadow-sm',
+        'hover:shadow-md hover:border-primary/20 dark:hover:border-primary/30',
+      ].join(' ')}
+    >
+      <CardHeader className="flex flex-col gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <CardTitle className="text-xl">{title}</CardTitle>
+          <div className="flex items-center gap-2">
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label={`View ${title}`}
+              >
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            )}
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label={`${title} on GitHub`}
+              >
+                <Github className="h-4 w-4" />
+              </a>
+            )}
+          </div>
         </div>
+        {tags && tags.length > 0 && (
+          <div className="flex flex-wrap gap-1">
+            {tags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs font-normal">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
       </CardHeader>
-      <CardContent className="w-full">{description}</CardContent>
+      <CardContent className="pt-0">
+        <CardDescription className="text-foreground/90">{description}</CardDescription>
+      </CardContent>
     </Card>
   );
 };
 
-export default ExperienceCard;
+export default ProjectCard;

@@ -4,10 +4,16 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Cat_Sad, Cat_Very_Happy } from './Icons';
-import { AtSign, Briefcase, FerrisWheel, Lightbulb, Menu, TextSelect, User, X } from 'lucide-react';
+import { AtSign, Briefcase, ChevronDown, FerrisWheel, Lightbulb, Menu, TextSelect, User, X } from 'lucide-react';
 import { ModeToggle } from '../mode-toggle';
-import { useTheme } from 'next-themes';
 import { profile } from '@/data';
+import { HOMEPAGE_SECTIONS } from '@/data/homepage-sections';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const NAV_LINKS = [
   { href: '#about', label: 'About', icon: User },
@@ -18,18 +24,24 @@ const NAV_LINKS = [
   { href: '#contact', label: 'Contact', icon: AtSign },
 ] as const;
 
+function sectionLabel(section: (typeof HOMEPAGE_SECTIONS)[number]): string {
+  const labels: Record<string, string> = {
+    'fun-facts': 'Fun Facts',
+    'skills': 'Skills',
+  };
+  return labels[section.id] ?? section.title;
+}
+
 const NAVBAR_HEIGHT = 'h-14';
 
 /** Scroll delta (px) before we collapse/expand — avoids jitter */
 const SCROLL_THRESHOLD = 12;
 
 export default function Navbar() {
-  const { resolvedTheme } = useTheme();
   const [collapsed, setCollapsed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
   const collapsedRef = useRef(false);
-  const iconColor = resolvedTheme === 'dark' ? 'white' : 'black';
 
   collapsedRef.current = collapsed;
 
@@ -84,41 +96,41 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'relative min-w-0 overflow-hidden',
+        'relative min-w-0 overflow-visible',
         'bg-white/85 dark:bg-zinc-900/85',
         'backdrop-blur-xl border border-border/40',
         'shadow-xl shadow-black/5 dark:shadow-zinc-950/40',
         'transition-colors duration-300',
         'rounded-2xl transition-[width] duration-300 ease-out',
-        collapsed ? 'w-14' : 'w-full',
+        collapsed ? 'w-14 mx-auto' : 'w-full',
         isMenuOpen && 'max-md:rounded-b-none max-md:border-b-0'
       )}
       aria-label="Main"
     >
       <div
         className={cn(
-          'flex items-center gap-4 px-4 md:px-6 min-w-0',
+          'flex items-center min-w-0 overflow-hidden',
           NAVBAR_HEIGHT,
-          collapsed && 'justify-center px-0'
+          collapsed ? 'justify-center items-center gap-0 px-0' : 'gap-4 px-4 md:px-6'
         )}
       >
-        {/* Left: Cat — toggles collapse; happy = collapsed, sad = expanded */}
+        {/* Cat — toggles collapse; happy = collapsed, sad = expanded; centered when collapsed. Uses currentColor for theme. */}
         <button
           type="button"
           onClick={handleCatClick}
           className={cn(
-            'flex items-center gap-2 shrink-0 rounded-lg outline-none',
+            'flex items-center shrink-0 rounded-lg outline-none text-foreground',
             'focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
             'transition-transform duration-200 hover:scale-105 active:scale-95',
-            collapsed ? 'p-2' : 'py-1'
+            collapsed ? 'p-2 justify-center w-full min-w-0' : 'gap-2 py-1'
           )}
           aria-expanded={isExpanded}
           aria-label={isExpanded ? 'Collapse menu' : 'Expand menu'}
         >
           {isExpanded ? (
-            <Cat_Sad color={iconColor} size="36" />
+            <Cat_Sad size="36" />
           ) : (
-            <Cat_Very_Happy color={iconColor} size="36" />
+            <Cat_Very_Happy size="36" />
           )}
           <span
             className={cn(
@@ -131,7 +143,7 @@ export default function Navbar() {
           </span>
         </button>
 
-        {/* Center: Nav links — hidden when collapsed */}
+        {/* Center: Sections dropdown + nav links — hidden when collapsed */}
         <ul
           className={cn(
             'hidden md:flex items-center gap-1 lg:gap-2 flex-1 justify-center min-w-0',
@@ -139,6 +151,31 @@ export default function Navbar() {
             collapsed ? 'opacity-0 w-0 min-w-0 overflow-hidden pointer-events-none' : 'opacity-100'
           )}
         >
+          <li>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={cn(
+                  'group flex items-center gap-1.5 py-2 px-3 rounded-lg whitespace-nowrap outline-none',
+                  'text-muted-foreground hover:text-foreground hover:bg-accent/30',
+                  'focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+                  'transition-colors duration-200 data-[state=open]:bg-accent/30 data-[state=open]:text-foreground'
+                )}
+                aria-label="Jump to section"
+              >
+                <span className="text-sm font-medium">Sections</span>
+                <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="min-w-[11rem] max-h-[min(70vh,20rem)] overflow-y-auto">
+                {HOMEPAGE_SECTIONS.map((section) => (
+                  <DropdownMenuItem key={section.id} asChild>
+                    <Link href={`#${section.id}`} className="flex cursor-pointer items-center">
+                      {sectionLabel(section)}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </li>
           {NAV_LINKS.map(({ href, label, icon: Icon }) => (
             <li key={label}>
               <Link
@@ -191,28 +228,57 @@ export default function Navbar() {
           'rounded-b-2xl border-x border-b border-border/40',
           'bg-white/85 dark:bg-zinc-900/85 backdrop-blur-xl',
           'shadow-lg shadow-black/5 dark:shadow-zinc-950/40',
-          mobileMenuOpen ? 'max-h-[min(70vh,24rem)] opacity-100' : 'max-h-0 opacity-0'
+          mobileMenuOpen ? 'max-h-[min(70vh,28rem)] opacity-100' : 'max-h-0 opacity-0'
         )}
       >
-        <ul className="flex flex-col gap-0.5 px-2 py-3">
-          {NAV_LINKS.map(({ href, label, icon: Icon }) => (
-            <li key={label}>
-              <Link
-                href={href}
-                onClick={() => setMobileMenuOpen(false)}
-                className={cn(
-                  'group flex items-center gap-2 py-2.5 px-3 rounded-lg',
-                  'text-muted-foreground hover:text-foreground hover:bg-accent/30',
-                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
-                  'transition-colors duration-200'
-                )}
-              >
-                <Icon className="h-4 w-4 shrink-0" />
-                <span className="text-sm font-medium">{label}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="overflow-y-auto max-h-[min(70vh,28rem)] px-2 py-3">
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                'flex w-full items-center justify-between gap-2 py-2.5 px-3 rounded-lg outline-none',
+                'text-muted-foreground hover:text-foreground hover:bg-accent/30',
+                'focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+                'transition-colors duration-200 data-[state=open]:bg-accent/30 data-[state=open]:text-foreground'
+              )}
+              aria-label="Jump to section"
+            >
+              <span className="text-sm font-medium">Sections</span>
+              <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 data-[state=open]:rotate-180" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" side="bottom" className="ml-2 min-w-[11rem] max-h-[16rem] overflow-y-auto">
+              {HOMEPAGE_SECTIONS.map((section) => (
+                <DropdownMenuItem key={section.id} asChild>
+                  <Link
+                    href={`#${section.id}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex cursor-pointer items-center"
+                  >
+                    {sectionLabel(section)}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <ul className="flex flex-col gap-0.5 pt-1 mt-1 border-t border-border/60">
+            {NAV_LINKS.map(({ href, label, icon: Icon }) => (
+              <li key={label}>
+                <Link
+                  href={href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={cn(
+                    'group flex items-center gap-2 py-2.5 px-3 rounded-lg',
+                    'text-muted-foreground hover:text-foreground hover:bg-accent/30',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+                    'transition-colors duration-200'
+                  )}
+                >
+                  <Icon className="h-4 w-4 shrink-0" />
+                  <span className="text-sm font-medium">{label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );

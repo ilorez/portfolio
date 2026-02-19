@@ -62,10 +62,14 @@ export interface Education {
   degree: string;
   major?: string;
   school: string;
-  location: string;
+  location?: string;
   start_date: string;
   end_date: string;
-  description: string;
+  description?: string;
+  activities?: string[];
+  skills?: string[];
+  logo?: string;
+  link?: string;
 }
 
 export interface Experience {
@@ -75,6 +79,22 @@ export interface Experience {
   start_date: string;
   end_date: string;
   description: string;
+  responsibilities?: string[];
+  skills?: string[];
+  logo?: string;
+  link?: string;
+}
+
+export interface Certification {
+  title: string;
+  issuer: string;
+  date: string;
+  description?: string;
+  link?: string;
+  credential_id?: string;
+  certificate_link?: string;
+  logo?: string;
+  skills?: string[];
 }
 
 /** Placeholder for future: blog post */

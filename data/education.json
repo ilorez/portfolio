@@ -1,19 +1,54 @@
 [
   {
-    "degree": "Technician Specialize",
-    "major": "Development digital",
-    "school": "Ista NTIC SYBA",
+    "degree": "Software Engineering / Full-Stack Development",
+    "school": "1337 Coding School",
     "location": "Morocco",
-    "start_date": "January 2022",
-    "end_date": "December 2024",
-    "description": "In My time at OFPPT I learned a lot of things about web development, building websites, and more."
+    "start_date": "Nov 2024",
+    "end_date": "Oct 2026",
+    "description": "In progress.",
+    "activities": [
+      "Hackathons",
+      "Collaborative Projects",
+      "Peer Learning",
+      "Algorithm Challenges",
+      "Open Source Contributions"
+    ],
+    "skills": ["C++", "MERN Stack", "Algorithms", "Web Development"],
+    "logo": "https://via.placeholder.com/80?text=1337",
+    "link": "https://example.com/school/1337"
   },
   {
-    "degree": "High School Diploma",
-    "school": "Tassoultanet High School",
+    "degree": "Computer Software Engineering",
+    "school": "UM6P",
     "location": "Morocco",
-    "start_date": "January 2020",
-    "end_date": "December 2021",
-    "description": "This days were the best days of my life."
+    "start_date": "Sep 2024",
+    "end_date": "Oct 2026",
+    "description": "In progress.",
+    "activities": [
+      "Collaborative projects",
+      "Hackathons",
+      "Research",
+      "Peer Learning",
+      "Seminars"
+    ],
+    "skills": ["Innovation Research", "Collaboration Solutions", "Software Architecture Principles"],
+    "logo": "https://via.placeholder.com/80?text=UM6P",
+    "link": "https://example.com/school/um6p"
+  },
+  {
+    "degree": "Full-Stack Web Development",
+    "school": "OFPPT",
+    "location": "Morocco",
+    "start_date": "Jan 2022",
+    "end_date": "Dec 2024",
+    "description": "Graduated. Focus on web technologies and full-stack development.",
+    "activities": [
+      "Coding Competitions",
+      "Web Projects",
+      "Group Projects"
+    ],
+    "skills": ["JavaScript", "Problem Solving", "Node.js", "PHP", "Laravel", "React.js"],
+    "logo": "https://via.placeholder.com/80?text=OFPPT",
+    "link": "https://example.com/school/ofppt"
   }
 ]

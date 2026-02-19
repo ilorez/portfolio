@@ -1,18 +1,37 @@
 [
   {
-    "title": "Développeur Full-Stack",
+    "title": "Software Developer Intern",
     "company": "AlloBaba",
-    "location": "Morocco, Marrakech",
-    "start_date": "Mars 2024",
-    "end_date": "Avril 2024",
-    "description": "AlloBaba est une agence internationale de communication web et marketing digital, offrant des solutions innovantes et un développement rapide pour des projets exigeants. En tant que développeur Full-Stack, j'étais responsable de la conception, du déploiement et de la maintenance d'applications web internes et externes."
+    "location": "Marrakesh-Safi, Morocco",
+    "start_date": "Jun 2024",
+    "end_date": "Jul 2024",
+    "description": "AlloBaba is a startup focused on building digital solutions and scalable applications. Contributed to development, testing, and improvement of web-based features while collaborating with the technical team.",
+    "responsibilities": [
+      "Assisted in developing and maintaining application features using modern web technologies.",
+      "Collaborated with team members to debug issues and improve code quality.",
+      "Participated in code reviews and followed best practices.",
+      "Supported testing and optimization for better performance and usability.",
+      "Gained hands-on experience in an agile startup workflow."
+    ],
+    "skills": ["Web Development", "Problem Solving", "Agile Development"],
+    "logo": "https://via.placeholder.com/80?text=AlloBaba",
+    "link": "https://example.com/company/allobaba"
   },
   {
-    "title": "Stage in Wilaya Marrakech Safi",
-    "company": "Wilaya Marrakech Safi",
-    "location": "Morocco, Marrakech",
-    "start_date": "September 2023",
-    "end_date": "December 2023",
-    "description": "As an intern at Wilaya Marrakech Safi, I had the opportunity to contribute to humanitarian efforts following the earthquake in Al Haouz. My mission was to capture crucial information for the people affected by the natural disaster."
+    "title": "Internship",
+    "company": "Wilaya of Marrakech-Safi Region",
+    "location": "Marrakesh, Morocco",
+    "start_date": "Sep 2023",
+    "end_date": "Nov 2023",
+    "description": "Assisted regional administrative authority with daily operations, documentation, and interdepartmental coordination.",
+    "responsibilities": [
+      "Supported documentation, reporting, and data organization for regional projects.",
+      "Contributed to research and analysis for regional development initiatives.",
+      "Participated in coordination between departments and local institutions.",
+      "Helped organize meetings and internal/external communications."
+    ],
+    "skills": ["Public Administration", "Reporting", "Interdepartmental Coordination"],
+    "logo": "https://via.placeholder.com/80?text=Wilaya",
+    "link": "https://example.com/company/wilaya-marrakech"
   }
 ]
