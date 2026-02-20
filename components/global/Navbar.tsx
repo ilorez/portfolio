@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { href: '#projects', label: 'Work', icon: Lightbulb },
   { href: '/', label: 'Blog', icon: FerrisWheel },
   { href: '#about', label: 'About', icon: User },
-  { href: '#experience', label: 'Resume', icon: Briefcase },
+  { href: '#resume', label: 'Resume', icon: Briefcase },
   { href: '#contact', label: 'Contact', icon: AtSign },
 ] as const;
 
@@ -73,7 +73,7 @@ export default function Navbar() {
   const isMenuOpen = mobileMenuOpen;
 
   const handleCatClick = () => {
-    document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+    //document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
     setCollapsed((c) => !c);
     if (!collapsed) setMobileMenuOpen(false);
   };

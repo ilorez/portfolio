@@ -62,6 +62,12 @@ export const HOMEPAGE_SECTIONS: HomepageSectionConfig[] = [
     cardType: 'funFact',
   },
   {
+    id: 'resume',
+    title: 'My Resume',
+    icon: 'file-down',
+    theme: 'about',
+  },
+  {
     id: 'experience',
     title: 'Experiences',
     icon: 'briefcase',

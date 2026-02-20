@@ -77,19 +77,24 @@ export default function HomepageSection({
             </span>
             , {text}
           </p>
-          <a
-            href={profile.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-fit"
-            aria-label="View or download CV"
-          >
-            <Button variant="outline" size="lg" className="gap-2">
-              <FileDown className="h-5 w-5" />
-              View / Download CV
-            </Button>
-          </a>
         </div>
+      );
+    }
+
+    if (section.id === 'resume') {
+      return (
+        <a
+          href={profile.resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex w-fit"
+          aria-label="View or download CV"
+        >
+          <Button variant="outline" size="lg" className="gap-2">
+            <FileDown className="h-5 w-5" />
+            View / Download CV
+          </Button>
+        </a>
       );
     }
 
