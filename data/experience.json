@@ -1,5 +1,39 @@
 [
   {
+    "slug": "jelba-ma-vaccine-reminder-platform",
+    "title": "Full-Stack Developer",
+    "company": "Jelba.ma — Hackathon Project",
+    "location": "Morocco",
+    "start_date": "Feb 2026",
+    "end_date": "Feb 2026",
+    "description": "Built a full-stack web application in 3 days that helps Moroccan families track children's vaccination schedules with AI-powered voice reminders. Features an admin dashboard for health officials to monitor regional vaccination coverage across Morocco.",
+    "responsibilities": [
+      "Developed full-stack application using React 19, TypeScript, and FastAPI with PostgreSQL.",
+      "Integrated ElevenLabs API for AI-generated Arabic voice reminders.",
+      "Implemented Twilio for automated phone calls and SMS notifications.",
+      "Built multi-lingual support (Arabic RTL, French, English) using i18next.",
+      "Created admin dashboard with interactive Morocco map and regional analytics using Leaflet and Recharts.",
+      "Deployed frontend on Vercel and backend on Render."
+    ],
+    "skills": [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Twilio",
+      "ElevenLabs",
+      "i18n",
+      "Leaflet",
+      "Recharts"
+    ],
+    "logo": "https://avatars.githubusercontent.com/u/261544978?s=400&u=95e6b53bd4b5b8178110b534f3c67f4abbe4491c&v=4",
+    "link": "https://jelba.vercel.app/",
+    "github": "https://github.com/vaccin-ma/app",
+    "project_slug": "jelba-vaccine-reminder-platform"
+  },
+  {
     "slug": "allobaba-software-developer-intern",
     "title": "Software Developer Intern",
     "company": "AlloBaba",
@@ -15,10 +49,11 @@
       "Gained hands-on experience in an agile startup workflow."
     ],
     "skills": ["Web Development", "Problem Solving", "Agile Development"],
-    "logo": "https://via.placeholder.com/80?text=AlloBaba",
+    "logo": "/logos/allobaba.png",
     "link": "https://allobaba.co",
     "linkedin": "https://www.linkedin.com/company/allobaba",
-    "instagram": "https://www.instagram.com/allobaba.co/"
+    "instagram": "https://www.instagram.com/allobaba.co/",
+    "project_slug": "scrapy-web-scraping-platform"
   },
   {
     "slug": "wilaya-marrakech-safi-internship",
@@ -33,7 +68,7 @@
       "Collaborated with local authorities and internal teams to support coordinated regional recovery and relief operations."
     ],
     "skills": ["Public Administration", "Data Collection", "Emergency Response", "Interdepartmental Coordination"],
-    "logo": "https://via.placeholder.com/80?text=Wilaya",
+    "logo": "/logos/wilaya.png",
     "link": "https://www.regionmarrakech-safi.ma/",
     "linkedin": "https://www.linkedin.com/company/r%C3%A9gion-marrakech-safi-%D8%AC%D9%87%D8%A9-%D9%85%D8%B1%D8%A7%D9%83%D8%B4-%D8%A2%D8%B3%D9%81%D9%8A/"
   }

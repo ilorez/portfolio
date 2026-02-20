@@ -30,13 +30,25 @@ export interface Service {
   icon: string;
 }
 
+export interface TeamMember {
+  name: string;
+  role?: string;
+  github?: string;
+}
+
 export interface Project {
+  slug: string;
   title: string;
   description: string;
+  long_description?: string;
   image?: string;
   link?: string;
   github?: string;
   tags?: string[];
+  features?: string[];
+  technologies?: string[];
+  screenshots?: string[];
+  team?: TeamMember[];
   Icon?: string;
   background?: string;
 }
@@ -86,6 +98,8 @@ export interface Experience {
   link?: string;
   linkedin?: string;
   instagram?: string;
+  github?: string;
+  project_slug?: string;
 }
 
 export interface Certification {
@@ -100,22 +114,22 @@ export interface Certification {
   skills?: string[];
 }
 
-/** Placeholder for future: blog post */
-export interface BlogPost {
-  id: string;
+export interface BlogPostLink {
   title: string;
+  url: string;
+}
+
+export interface BlogPost {
   slug: string;
+  title: string;
   excerpt: string;
   content: string;
   date: string;
+  cover_image?: string;
+  images?: string[];
   tags?: string[];
-}
-
-/** Placeholder for future: comment */
-export interface Comment {
-  id: string;
-  postId: string;
-  author: string;
-  content: string;
-  date: string;
+  category?: string;
+  read_time?: string;
+  links?: BlogPostLink[];
+  published: boolean;
 }

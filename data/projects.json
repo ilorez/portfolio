@@ -1,5 +1,45 @@
 [
   {
+    "slug": "jelba-vaccine-reminder-platform",
+    "title": "Jelba.ma",
+    "description": "A vaccine reminder platform that helps Moroccan families track their children's vaccination schedules with AI-powered voice reminders.",
+    "long_description": "Jelba.ma is a full-stack web application built in 3 days during a hackathon. It helps Moroccan parents track their children's vaccination schedules with automated AI voice reminders in Arabic, French, and English. The platform features an admin dashboard for health officials to monitor regional vaccination coverage across Morocco with interactive maps and analytics.",
+    "image": "https://avatars.githubusercontent.com/u/261544978?s=200&v=4",
+    "link": "https://jelba.vercel.app",
+    "github": "https://github.com/vaccin-ma/app",
+    "tags": ["React 19", "TypeScript", "FastAPI", "Python"],
+    "features": [
+      "Automated AI voice reminders in Arabic using ElevenLabs",
+      "SMS and phone call notifications via Twilio integration",
+      "Multi-lingual support with Arabic RTL, French, and English",
+      "Admin dashboard with interactive Morocco map for regional analytics",
+      "Vaccination coverage monitoring with Recharts visualizations",
+      "Parent portal for managing children's vaccination schedules"
+    ],
+    "technologies": [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS 4",
+      "Framer Motion",
+      "Python",
+      "FastAPI",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "ElevenLabs",
+      "Twilio",
+      "Leaflet",
+      "Recharts",
+      "i18next"
+    ],
+    "team": [
+      { "name": "Rim Lahlali", "role": "Healthcare Student" },
+      { "name": "Mohamed Rayan Chaquiq El Badre", "role": "Healthcare Student" },
+      { "name": "Bahraoui Yassir", "role": "IT Student" }
+    ]
+  },
+  {
+    "slug": "kouralink",
     "title": "Kouralink",
     "description": "KouraLink is a platform for football enthusiasts. It connects players and teams from all over the world, allowing them to form teams, organize matches, and participate in tournaments.",
     "image": "https://avatars.githubusercontent.com/u/161023217?s=200&v=4",
@@ -7,20 +47,47 @@
     "github": "https://github.com/kouralink",
     "tags": ["React", "Node.js", "Express", "MongoDB"],
     "Icon": "https://kouralink.vercel.app/logo.svg",
-    "background": "https://kouralink.vercel.app/png.png"
+    "background": "https://kouralink.vercel.app/png.png",
+    "team": [
+      { "name": "Hamza Wahmane", "github": "https://github.com/Wahmane-Hamza" },
+      { "name": "Meriem Maatouqui" },
+      { "name": "Abdellah Nsila", "github": "https://github.com/Abdellah-Nsila" }
+    ]
   },
   {
+    "slug": "scrapy-web-scraping-platform",
     "title": "Scrapy",
-    "description": "Scrapy is a web scraping tool that allows you to extract data from some websites. It's fast, powerful, and easy to use.",
+    "description": "A web scraping platform that automates data extraction from multiple sources. Fast, powerful, and easy to use.",
+    "long_description": "Scrapy is a comprehensive web scraping platform developed during my internship at AlloBaba. It automates data extraction from multiple sources including Pages Jaunes, Orange 118712, and Autoscout24. The platform features a modern web client for managing scraping tasks, a cross-platform desktop application built with Electron, and Python-based microservices backend for efficient and scalable data collection.",
     "image": "https://avatars.githubusercontent.com/u/162126226?s=200&v=4",
-    "link": "https://scrapyab.vercel.app/scrapy",
-    "github": "https://github.com/Allobaba-WebScrapy"
+    "link": "https://scrapyab.vercel.app",
+    "github": "https://github.com/Allobaba-WebScrapy",
+    "tags": ["React", "TypeScript", "Python", "Electron"],
+    "features": [
+      "Web client for managing and monitoring scraping tasks",
+      "Cross-platform desktop application (Windows, macOS, Linux)",
+      "Multi-source data extraction (Pages Jaunes, Orange, Autoscout24)",
+      "Python microservices architecture for scalability",
+      "Real-time data processing and export capabilities",
+      "User-friendly interface for non-technical users"
+    ],
+    "technologies": ["React", "TypeScript", "Vite", "Electron", "Python", "FastAPI", "Web Scraping", "Microservices", "REST APIs"],
+    "team": [
+      { "name": "Hamza Wahmane", "github": "https://github.com/Wahmane-Hamza" },
+      { "name": "Abdellah Nsila", "github": "https://github.com/Abdellah-Nsila" },
+      { "name": "Mohammed Amine Elghbari" }
+    ]
   },
   {
+    "slug": "handyscript",
     "title": "HandyScript",
     "description": "A set of useful Javascript modules that extends the javascript core context.",
     "image": "https://avatars.githubusercontent.com/u/133532543?s=200&v=4",
     "link": "https://www.handyscript.tech/",
-    "github": "https://github.com/handyscript/handyscript"
+    "github": "https://github.com/handyscript/handyscript",
+    "team": [
+      { "name": "Yassine Bouba", "github": "https://github.com/vvhybe" },
+      { "name": "Abdessamad Zalmadi", "github": "https://github.com/tchisama" }
+    ]
   }
 ]

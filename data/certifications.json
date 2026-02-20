@@ -5,8 +5,8 @@
     "date": "Jan 2026",
     "credential_id": "7,475",
     "skills": ["AI Agents", "Agentic AI Systems", "Prompt Frameworks", "LLMs", "Generative AI"],
-    "certificate_link": "https://example.com/certificate/datacamp-ai",
-    "logo": "https://via.placeholder.com/80?text=DataCamp"
+    "certificate_link": "https://www.datacamp.com/completed/statement-of-accomplishment/course/05fd353a1ea8dc0e3e1ab484863fcfabfaa02578",
+    "logo": "/logos/datacamp.png"
   },
   {
     "title": "Docker for Developers",
@@ -14,7 +14,7 @@
     "date": "Jan 2026",
     "credential_id": "nZp3lEC3kDJM8O0jzIPv7l5qnnzoFQ",
     "skills": ["Docker", "Application Deployment", "Microservices"],
-    "certificate_link": "https://example.com/certificate/educative-docker",
-    "logo": "https://via.placeholder.com/80?text=Educative"
+    "certificate_link": "https://www.educative.io/verify-certificate/nZp3lEC3kDJM8O0jzIPv7l5qnnzoFQ",
+    "logo": "/logos/educative.jpeg"
   }
 ]

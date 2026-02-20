@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -15,6 +16,7 @@ import type { Project } from '@/data/types';
 interface ProjectCardProps extends Project {}
 
 const ProjectCard = ({
+  slug,
   title,
   description,
   link,
@@ -22,55 +24,59 @@ const ProjectCard = ({
   tags,
 }: ProjectCardProps) => {
   return (
-    <Card
-      className={[
-        'w-full max-w-[500px] transition-all duration-200',
-        'bg-card border border-border/50 shadow-sm',
-        'hover:shadow-md hover:border-primary/20 dark:hover:border-primary/30',
-      ].join(' ')}
-    >
-      <CardHeader className="flex flex-col gap-2">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <CardTitle className="text-xl">{title}</CardTitle>
-          <div className="flex items-center gap-2">
-            {link && (
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={`View ${title}`}
-              >
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            )}
-            {github && (
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={`${title} on GitHub`}
-              >
-                <Github className="h-4 w-4" />
-              </a>
-            )}
+    <Link href={`/projects/${slug}`} className="block w-full max-w-[500px] group">
+      <Card
+        className={[
+          'w-full transition-all duration-200',
+          'bg-card border border-border/50 shadow-sm',
+          'hover:shadow-md hover:border-primary/20 dark:hover:border-primary/30',
+        ].join(' ')}
+      >
+        <CardHeader className="flex flex-col gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <CardTitle className="text-xl group-hover:text-primary transition-colors">{title}</CardTitle>
+            <div className="flex items-center gap-2">
+              {link && (
+                <span
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(link, '_blank');
+                  }}
+                  className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                  aria-label={`View ${title}`}
+                >
+                  <ExternalLink className="h-4 w-4" />
+                </span>
+              )}
+              {github && (
+                <span
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(github, '_blank');
+                  }}
+                  className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                  aria-label={`${title} on GitHub`}
+                >
+                  <Github className="h-4 w-4" />
+                </span>
+              )}
+            </div>
           </div>
-        </div>
-        {tags && tags.length > 0 && (
-          <div className="flex flex-wrap gap-1">
-            {tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs font-normal">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        )}
-      </CardHeader>
-      <CardContent className="pt-0">
-        <CardDescription className="text-foreground/90">{description}</CardDescription>
-      </CardContent>
-    </Card>
+          {tags && tags.length > 0 && (
+            <div className="flex flex-wrap gap-1">
+              {tags.map((tag) => (
+                <Badge key={tag} variant="secondary" className="text-xs font-normal">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          )}
+        </CardHeader>
+        <CardContent className="pt-0">
+          <CardDescription className="text-foreground/90">{description}</CardDescription>
+        </CardContent>
+      </Card>
+    </Link>
   );
 };
 

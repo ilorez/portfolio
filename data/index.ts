@@ -14,6 +14,7 @@ import type {
   Education,
   Experience,
   Certification,
+  BlogPost,
 } from './types';
 
 import profileData from './profile.json';
@@ -26,6 +27,7 @@ import funFactsData from './fun-facts.json';
 import educationData from './education.json';
 import experienceData from './experience.json';
 import certificationsData from './certifications.json';
+import blogData from './blog.json';
 
 export type {
   ProfileInfo,
@@ -38,6 +40,7 @@ export type {
   Education,
   Experience,
   Certification,
+  BlogPost,
 };
 
 export const profile = profileData as ProfileInfo;
