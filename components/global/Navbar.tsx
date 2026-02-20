@@ -10,7 +10,7 @@ import { profile } from '@/data';
 
 const NAV_LINKS = [
   { href: '#projects', label: 'Work', icon: Lightbulb },
-  { href: '/', label: 'Blog', icon: FerrisWheel },
+  { href: '/blog', label: 'Blog', icon: FerrisWheel },
   { href: '#about', label: 'About', icon: User },
   { href: '#resume', label: 'Resume', icon: Briefcase },
   { href: '#contact', label: 'Contact', icon: AtSign },

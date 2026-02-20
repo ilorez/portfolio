@@ -53,6 +53,7 @@ export const funFacts = funFactsData as FunFact[];
 export const education = educationData as Education[];
 export const experience = experienceData as Experience[];
 export const certifications = certificationsData as Certification[];
+export const blogPosts = (blogData as BlogPost[]).filter((post) => post.published);
 
 /** All data in one object for components that need it (e.g. legacy usage) */
 export const portfolio = {
@@ -66,4 +67,5 @@ export const portfolio = {
   education,
   experience,
   certifications,
+  blogPosts,
 };

@@ -1,0 +1,33 @@
+[
+  {
+    "slug": "educative-refund-story",
+    "title": "How I Got a Refund from Educative — A Lesson in Communication",
+    "excerpt": "Accidentally bought the annual plan instead of monthly. Here's how polite communication saved my student budget.",
+    "content": "Accidentally bought the annual plan on Educative instead of the monthly one 😅\n\nAs a student, every dollar counts, so I reached out to their support and explained my situation. They granted a one-time courtesy refund — proof that polite, clear communication works.\n\n## Big Thanks\n\nBig thanks to the Educative team for their understanding! 🙌\n\n## Lesson Learned\n\nMistakes happen, but honesty and professionalism can go a long way.\n\nIf you ever find yourself in a similar situation, don't hesitate to reach out politely and explain your case. The worst they can say is no, but you might be surprised by the outcome!",
+    "date": "2026-02-20",
+    "cover_image": "/blog/educative-refund-story.png",
+    "tags": ["Student Life", "Learning", "Problem Solving", "Budget Smart"],
+    "category": "Personal",
+    "read_time": "1 min read",
+    "links": [
+      { "title": "Educative", "url": "https://www.educative.io" }
+    ],
+    "published": true
+  },
+  {
+    "slug": "welcome-to-my-blog",
+    "title": "Welcome to My Blog",
+    "excerpt": "This is my first blog post where I share my thoughts on software development, technology, and my journey as a developer.",
+    "content": "# Welcome to My Blog\n\nHello everyone! I'm excited to launch my personal blog where I'll be sharing:\n\n- **Technical tutorials** and guides\n- **Project updates** and behind-the-scenes\n- **Thoughts** on software development trends\n- **Lessons learned** from my journey\n\n## What to Expect\n\nI'll be posting about various topics including:\n\n1. Web development with React, Next.js, and TypeScript\n2. Backend development with Python and FastAPI\n3. DevOps and deployment strategies\n4. My experiences at hackathons and projects\n\nStay tuned for more content!\n\n## Connect with Me\n\nFeel free to reach out on any of my social platforms. I'd love to hear your feedback and suggestions for future posts.",
+    "date": "2026-02-20",
+    "cover_image": "/blog/welcome-cover.jpg",
+    "tags": ["Introduction", "Personal", "Blog"],
+    "category": "Personal",
+    "read_time": "2 min read",
+    "links": [
+      { "title": "My GitHub", "url": "https://github.com" },
+      { "title": "My LinkedIn", "url": "https://linkedin.com" }
+    ],
+    "published": true
+  }
+]
