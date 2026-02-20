@@ -73,6 +73,7 @@ export interface Education {
 }
 
 export interface Experience {
+  slug: string;
   title: string;
   company: string;
   location: string;
@@ -83,6 +84,8 @@ export interface Experience {
   skills?: string[];
   logo?: string;
   link?: string;
+  linkedin?: string;
+  instagram?: string;
 }
 
 export interface Certification {

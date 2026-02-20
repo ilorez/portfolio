@@ -1,5 +1,6 @@
 [
   {
+    "slug": "allobaba-software-developer-intern",
     "title": "Software Developer Intern",
     "company": "AlloBaba",
     "location": "Marrakesh-Safi, Morocco",
@@ -15,9 +16,12 @@
     ],
     "skills": ["Web Development", "Problem Solving", "Agile Development"],
     "logo": "https://via.placeholder.com/80?text=AlloBaba",
-    "link": "https://example.com/company/allobaba"
+    "link": "https://allobaba.co",
+    "linkedin": "https://www.linkedin.com/company/allobaba",
+    "instagram": "https://www.instagram.com/allobaba.co/"
   },
   {
+    "slug": "wilaya-marrakech-safi-internship",
     "title": "Internship",
     "company": "Wilaya of Marrakech-Safi Region",
     "location": "Marrakesh, Morocco",
@@ -30,6 +34,7 @@
     ],
     "skills": ["Public Administration", "Data Collection", "Emergency Response", "Interdepartmental Coordination"],
     "logo": "https://via.placeholder.com/80?text=Wilaya",
-    "link": "https://example.com/company/wilaya-marrakech"
+    "link": "https://www.regionmarrakech-safi.ma/",
+    "linkedin": "https://www.linkedin.com/company/r%C3%A9gion-marrakech-safi-%D8%AC%D9%87%D8%A9-%D9%85%D8%B1%D8%A7%D9%83%D8%B4-%D8%A2%D8%B3%D9%81%D9%8A/"
   }
 ]
