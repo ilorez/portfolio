@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { client, postBySlugQuery, postSlugsQuery, urlFor } from '@/lib/sanity';
 import { cn } from '@/lib/utils';
 import { ArrowLeft, Calendar, Clock, Tag, ExternalLink } from 'lucide-react';
@@ -15,9 +16,7 @@ interface BlogPostPageProps {
 }
 
 interface GalleryImage {
-  asset: {
-    _ref: string;
-  };
+  asset: { _ref: string };
   caption?: string;
 }
 
@@ -26,11 +25,7 @@ interface SanityPost {
   title: string;
   slug: string;
   excerpt: string;
-  coverImage?: {
-    asset: {
-      _ref: string;
-    };
-  };
+  coverImage?: { asset: { _ref: string } };
   gallery?: GalleryImage[];
   content: any[];
   publishedAt: string;
@@ -42,92 +37,46 @@ interface SanityPost {
 
 function ImageGallery({ images }: { images: GalleryImage[] }) {
   const count = images.length;
-  
   if (count === 0) return null;
-  
+
+  const renderImage = (img: GalleryImage, index: number, size = 400) => (
+    <img
+      src={urlFor(img).width(size).height(size).url()}
+      alt={img.caption || `Gallery image ${index + 1}`}
+      className="w-full h-full object-cover"
+    />
+  );
+
   if (count === 1) {
     return (
       <div className="rounded-xl overflow-hidden border border-border">
-        <img
-          src={urlFor(images[0]).width(800).url()}
-          alt={images[0].caption || 'Gallery image'}
-          className="w-full h-auto"
-        />
-        {images[0].caption && (
-          <p className="text-sm text-muted-foreground p-3 bg-muted/30">{images[0].caption}</p>
-        )}
+        <img src={urlFor(images[0]).width(800).url()} alt={images[0].caption || 'Gallery image'} className="w-full h-auto" />
+        {images[0].caption && <p className="text-sm text-muted-foreground p-3 bg-muted/30">{images[0].caption}</p>}
       </div>
     );
   }
-  
-  if (count === 2) {
-    return (
-      <div className="grid grid-cols-2 gap-1 rounded-xl overflow-hidden border border-border">
-        {images.map((img, i) => (
-          <div key={i} className="aspect-square overflow-hidden">
-            <img
-              src={urlFor(img).width(400).height(400).url()}
-              alt={img.caption || `Gallery image ${i + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-    );
-  }
-  
+
   if (count === 3) {
     return (
       <div className="grid grid-cols-2 gap-1 rounded-xl overflow-hidden border border-border">
         <div className="row-span-2 overflow-hidden">
-          <img
-            src={urlFor(images[0]).width(400).height(800).url()}
-            alt={images[0].caption || 'Gallery image 1'}
-            className="w-full h-full object-cover"
-          />
+          <img src={urlFor(images[0]).width(400).height(800).url()} alt={images[0].caption || 'Gallery image 1'} className="w-full h-full object-cover" />
         </div>
         {images.slice(1).map((img, i) => (
-          <div key={i} className="aspect-square overflow-hidden">
-            <img
-              src={urlFor(img).width(400).height(400).url()}
-              alt={img.caption || `Gallery image ${i + 2}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <div key={i} className="aspect-square overflow-hidden">{renderImage(img, i + 1)}</div>
         ))}
       </div>
     );
   }
-  
-  if (count === 4) {
-    return (
-      <div className="grid grid-cols-2 gap-1 rounded-xl overflow-hidden border border-border">
-        {images.map((img, i) => (
-          <div key={i} className="aspect-square overflow-hidden">
-            <img
-              src={urlFor(img).width(400).height(400).url()}
-              alt={img.caption || `Gallery image ${i + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-    );
-  }
-  
-  // 5+ images: 2x2 grid with last cell showing remaining count
+
   const visibleImages = images.slice(0, 4);
-  const remainingCount = count - 4;
-  
+  const remainingCount = count > 4 ? count - 4 : 0;
+
   return (
     <div className="grid grid-cols-2 gap-1 rounded-xl overflow-hidden border border-border">
       {visibleImages.map((img, i) => (
         <div key={i} className="aspect-square overflow-hidden relative">
-          <img
-            src={urlFor(img).width(400).height(400).url()}
-            alt={img.caption || `Gallery image ${i + 1}`}
-            className="w-full h-full object-cover"
-          />
+          {renderImage(img, i)}
           {i === 3 && remainingCount > 0 && (
             <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
               <span className="text-white text-2xl font-bold">+{remainingCount}</span>
@@ -323,13 +272,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </section>
         )}
 
-        <footer className="mt-12 pt-8 border-t border-border">
+        <footer className="mt-12 pt-8 border-t border-border flex items-center justify-between">
           <Button variant="outline" asChild>
             <Link href="/blog" className="gap-2">
               <ArrowLeft className="h-4 w-4" />
-              Back to All Posts
+              All Posts
             </Link>
           </Button>
+          <Image src="/cat_logo/sad.svg" alt="ilorez" width={32} height={32} className="opacity-50 hover:opacity-100 transition-opacity" />
         </footer>
       </article>
     </main>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { client, postsQuery, urlFor } from '@/lib/sanity';
 import { cn } from '@/lib/utils';
 import { ArrowLeft, Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
@@ -17,11 +18,7 @@ interface SanityPost {
   title: string;
   slug: string;
   excerpt: string;
-  coverImage?: {
-    asset: {
-      _ref: string;
-    };
-  };
+  coverImage?: { asset: { _ref: string } };
   publishedAt: string;
   readTime?: string;
   category?: string;
@@ -56,7 +53,8 @@ export default async function BlogPage() {
         </header>
 
         {posts.length === 0 ? (
-          <div className="text-center py-16">
+          <div className="text-center py-16 flex flex-col items-center gap-4">
+            <Image src="/cat_logo/sad.svg" alt="No posts" width={64} height={64} className="opacity-50" />
             <p className="text-muted-foreground text-lg">No posts yet. Check back soon!</p>
           </div>
         ) : (
