@@ -1,25 +1,53 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { blogPosts } from '@/data';
+import { client, postBySlugQuery, postSlugsQuery, urlFor } from '@/lib/sanity';
 import { cn } from '@/lib/utils';
-import { ArrowLeft, Calendar, Clock, Tag, ExternalLink, Share2 } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Tag, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { thirdFont } from '@/app/fonts';
+import { PortableText, type PortableTextComponents } from '@portabletext/react';
+
+export const revalidate = 60;
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
+interface SanityPost {
+  _id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  coverImage?: {
+    asset: {
+      _ref: string;
+    };
+  };
+  content: any[];
+  publishedAt: string;
+  readTime?: string;
+  category?: string;
+  tags?: string[];
+  links?: { title: string; url: string }[];
+}
+
+async function getPost(slug: string): Promise<SanityPost | null> {
+  return client.fetch(postBySlugQuery, { slug });
+}
+
+async function getPostSlugs(): Promise<string[]> {
+  return client.fetch(postSlugsQuery);
+}
+
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    slug: post.slug,
-  }));
+  const slugs = await getPostSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = await getPost(slug);
   if (!post) return { title: 'Post Not Found' };
   return {
     title: `${post.title} — Blog`,
@@ -27,36 +55,72 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: post.cover_image ? [post.cover_image] : [],
+      images: post.coverImage ? [urlFor(post.coverImage).width(1200).height(630).url()] : [],
     },
   };
 }
 
-function renderMarkdown(content: string) {
-  let html = content;
-  
-  html = html.replace(/^### (.*$)/gim, '<h3 class="text-lg font-semibold text-foreground mt-6 mb-3">$1</h3>');
-  html = html.replace(/^## (.*$)/gim, '<h2 class="text-xl font-semibold text-foreground mt-8 mb-4">$1</h2>');
-  html = html.replace(/^# (.*$)/gim, '<h1 class="text-2xl font-bold text-foreground mt-8 mb-4">$1</h1>');
-  
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>');
-  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-  html = html.replace(/`(.*?)`/g, '<code class="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">$1</code>');
-  
-  html = html.replace(/^\d+\. (.*$)/gim, '<li class="ml-6 list-decimal text-muted-foreground leading-relaxed">$1</li>');
-  html = html.replace(/^- (.*$)/gim, '<li class="ml-6 list-disc text-muted-foreground leading-relaxed">$1</li>');
-  
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">$1</a>');
-  
-  html = html.replace(/\n\n/g, '</p><p class="text-muted-foreground leading-relaxed mb-4">');
-  html = `<p class="text-muted-foreground leading-relaxed mb-4">${html}</p>`;
-  
-  return html;
-}
+const portableTextComponents: PortableTextComponents = {
+  types: {
+    image: ({ value }) => (
+      <div className="my-8 rounded-lg overflow-hidden border border-border">
+        <img
+          src={urlFor(value).width(800).url()}
+          alt={value.alt || 'Blog image'}
+          className="w-full h-auto"
+        />
+      </div>
+    ),
+  },
+  block: {
+    h1: ({ children }) => (
+      <h1 className="text-2xl font-bold text-foreground mt-8 mb-4">{children}</h1>
+    ),
+    h2: ({ children }) => (
+      <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">{children}</h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="text-lg font-semibold text-foreground mt-6 mb-3">{children}</h3>
+    ),
+    normal: ({ children }) => (
+      <p className="text-muted-foreground leading-relaxed mb-4">{children}</p>
+    ),
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-primary pl-4 my-6 italic text-muted-foreground">
+        {children}
+      </blockquote>
+    ),
+  },
+  marks: {
+    strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
+    em: ({ children }) => <em>{children}</em>,
+    code: ({ children }) => (
+      <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">{children}</code>
+    ),
+    link: ({ children, value }) => (
+      <a
+        href={value?.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary hover:underline"
+      >
+        {children}
+      </a>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => <ul className="list-disc ml-6 mb-4 space-y-2">{children}</ul>,
+    number: ({ children }) => <ol className="list-decimal ml-6 mb-4 space-y-2">{children}</ol>,
+  },
+  listItem: {
+    bullet: ({ children }) => <li className="text-muted-foreground">{children}</li>,
+    number: ({ children }) => <li className="text-muted-foreground">{children}</li>,
+  },
+};
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = await getPost(slug);
 
   if (!post) {
     notFound();
@@ -74,10 +138,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </Link>
 
         <header className="mb-10">
-          {post.cover_image && (
+          {post.coverImage && (
             <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden mb-8 bg-muted">
               <img
-                src={post.cover_image}
+                src={urlFor(post.coverImage).width(1200).height(600).url()}
                 alt={post.title}
                 className="w-full h-full object-cover"
               />
@@ -87,16 +151,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-4">
             <span className="inline-flex items-center gap-1.5">
               <Calendar className="h-4 w-4" />
-              {new Date(post.date).toLocaleDateString('en-US', {
+              {new Date(post.publishedAt).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
               })}
             </span>
-            {post.read_time && (
+            {post.readTime && (
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="h-4 w-4" />
-                {post.read_time}
+                {post.readTime}
               </span>
             )}
             {post.category && (
@@ -125,28 +189,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </header>
 
         <div className="border-t border-border pt-10">
-          <div 
-            className="prose prose-neutral dark:prose-invert max-w-none"
-            dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
-          />
+          {post.content && (
+            <PortableText value={post.content} components={portableTextComponents} />
+          )}
         </div>
-
-        {post.images && post.images.length > 0 && (
-          <section className="mt-10 pt-10 border-t border-border">
-            <h2 className="text-lg font-semibold text-foreground mb-4">Images</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {post.images.map((image, index) => (
-                <div key={index} className="rounded-lg overflow-hidden border border-border">
-                  <img
-                    src={image}
-                    alt={`${post.title} image ${index + 1}`}
-                    className="w-full h-auto"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
 
         {post.links && post.links.length > 0 && (
           <section className="mt-10 pt-10 border-t border-border">
@@ -165,14 +211,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         )}
 
         <footer className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <Button variant="outline" asChild>
-              <Link href="/blog" className="gap-2">
-                <ArrowLeft className="h-4 w-4" />
-                Back to All Posts
-              </Link>
-            </Button>
-          </div>
+          <Button variant="outline" asChild>
+            <Link href="/blog" className="gap-2">
+              <ArrowLeft className="h-4 w-4" />
+              Back to All Posts
+            </Link>
+          </Button>
         </footer>
       </article>
     </main>

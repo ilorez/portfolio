@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { blogPosts } from '@/data';
+import { client, postsQuery, urlFor } from '@/lib/sanity';
 import { cn } from '@/lib/utils';
 import { ArrowLeft, Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -10,10 +10,30 @@ export const metadata = {
   description: 'Read my latest blog posts about software development, technology, and my journey as a developer.',
 };
 
-export default function BlogPage() {
-  const sortedPosts = [...blogPosts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+export const revalidate = 60;
+
+interface SanityPost {
+  _id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  coverImage?: {
+    asset: {
+      _ref: string;
+    };
+  };
+  publishedAt: string;
+  readTime?: string;
+  category?: string;
+  tags?: string[];
+}
+
+async function getPosts(): Promise<SanityPost[]> {
+  return client.fetch(postsQuery);
+}
+
+export default async function BlogPage() {
+  const posts = await getPosts();
 
   return (
     <main className="min-h-screen bg-background">
@@ -35,21 +55,21 @@ export default function BlogPage() {
           </p>
         </header>
 
-        {sortedPosts.length === 0 ? (
+        {posts.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-muted-foreground text-lg">No posts yet. Check back soon!</p>
           </div>
         ) : (
           <div className="space-y-8">
-            {sortedPosts.map((post) => (
-              <article key={post.slug} className="group">
+            {posts.map((post) => (
+              <article key={post._id} className="group">
                 <Link href={`/blog/${post.slug}`} className="block">
                   <div className="p-6 rounded-xl border border-border bg-card hover:bg-muted/50 hover:border-primary/30 transition-all">
                     <div className="flex flex-col md:flex-row gap-6">
-                      {post.cover_image && (
+                      {post.coverImage && (
                         <div className="shrink-0 w-full md:w-48 h-32 rounded-lg overflow-hidden bg-muted">
                           <img
-                            src={post.cover_image}
+                            src={urlFor(post.coverImage).width(400).height(200).url()}
                             alt={post.title}
                             className="w-full h-full object-cover"
                           />
@@ -59,16 +79,16 @@ export default function BlogPage() {
                         <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-2">
                           <span className="inline-flex items-center gap-1">
                             <Calendar className="h-3.5 w-3.5" />
-                            {new Date(post.date).toLocaleDateString('en-US', {
+                            {new Date(post.publishedAt).toLocaleDateString('en-US', {
                               year: 'numeric',
                               month: 'short',
                               day: 'numeric',
                             })}
                           </span>
-                          {post.read_time && (
+                          {post.readTime && (
                             <span className="inline-flex items-center gap-1">
                               <Clock className="h-3.5 w-3.5" />
-                              {post.read_time}
+                              {post.readTime}
                             </span>
                           )}
                           {post.category && (
