@@ -33,7 +33,7 @@ export default function Footer() {
       className={cn(
         'relative w-full mt-12 md:mt-16',
         'bg-zinc-50/80 dark:bg-zinc-900/60',
-        'border-t border-border/30'
+        'animated-border-top'
       )}
     >
       {/* Back to Top */}
@@ -41,6 +41,7 @@ export default function Footer() {
         <button
           onClick={scrollToTop}
           className={cn(
+            'animated-button-border',
             'flex items-center justify-center w-10 h-10 rounded-full',
             'bg-primary text-primary-foreground',
             'shadow-md hover:shadow-lg hover:-translate-y-0.5',

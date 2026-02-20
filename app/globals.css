@@ -107,3 +107,76 @@
     @apply min-h-screen bg-background text-foreground antialiased;
   }
 }
+
+/* Animated border effects */
+@keyframes border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes spin-border {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-border-top {
+  position: relative;
+}
+
+.animated-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--primary) / 0.3) 25%,
+    hsl(var(--primary)) 50%,
+    hsl(var(--primary) / 0.3) 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: border-flow 3s linear infinite;
+}
+
+.animated-button-border {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-button-border::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    hsl(var(--secondary)) 60deg,
+    hsl(var(--primary) / 0.9) 120deg,
+    transparent 360deg,
+    transparent 360deg
+  );
+  animation: spin-border 2s linear infinite;
+  z-index: -1;
+}
+
+.animated-button-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  z-index: -1;
+}
