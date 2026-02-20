@@ -38,6 +38,27 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'gallery',
+      title: 'Image Gallery',
+      type: 'array',
+      description: 'Add multiple images that will display in a grid layout (like LinkedIn posts)',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'Caption',
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'array',

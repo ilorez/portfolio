@@ -22,6 +22,10 @@ export const postBySlugQuery = groq`
     "slug": slug.current,
     excerpt,
     coverImage,
+    gallery[] {
+      asset,
+      caption
+    },
     content,
     publishedAt,
     readTime,
