@@ -2,6 +2,7 @@
 
 import Header from '@/components/global/homepage/header';
 import Navbar from '@/components/global/Navbar';
+import Footer from '@/components/global/Footer';
 import HomepageSection from '@/components/global/homepage/HomepageSection';
 import { HOMEPAGE_SECTIONS } from '@/data/homepage-sections';
 import { portfolio } from '@/data';
@@ -50,6 +51,8 @@ export default function Home() {
           })}
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }
