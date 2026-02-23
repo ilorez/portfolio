@@ -15,6 +15,7 @@ import SkillsBlock from '../SkillsBlock';
 import ContactCard from '../ContactCard';
 import { Button } from '@/components/ui/button';
 import { FileDown } from 'lucide-react';
+import Link from 'next/link';
 import type { HomepageSectionConfig, SectionTheme } from '@/data/homepage-sections';
 import type { Service, Experience, Education, FunFact as FunFactType, Project, Certification } from '@/data/types';
 import type { SkillsByCategory } from '@/data/types';
@@ -83,18 +84,12 @@ export default function HomepageSection({
 
     if (section.id === 'resume') {
       return (
-        <a
-          href={profile.resume}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex w-fit"
-          aria-label="View or download CV"
-        >
-          <Button variant="outline" size="lg" className="gap-2">
+        <Button asChild variant="outline" size="lg" className="gap-2 w-fit">
+          <Link href="/resume" aria-label="Go to resume page">
             <FileDown className="h-5 w-5" />
             View / Download CV
-          </Button>
-        </a>
+          </Link>
+        </Button>
       );
     }
 

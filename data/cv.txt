@@ -1,0 +1,207 @@
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Zobair Najdaoui} \\ \vspace{1pt}
+    Full-Stack Developer, Software Engineering Student\\ \vspace{1pt}
+    \small \href{mailto:zobirnajdaoui@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{zobirnajdaoui@gmail.com}} ~
+    \href{https://www.linkedin.com/in/ilorez/}{\raisebox{-0.2\height}\faLinkedin\ \underline{ilorez}}  ~
+    \href{https://github.com/ilorez}{\raisebox{-0.2\height}\faGithub\ \underline{ilorez}} ~
+    \href{https://najdaoui.me}{\underline{najdaoui.me}} ~
+    Morocco, Marrakech
+    \vspace{-8pt}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+Full-stack developer with 3+ years of experience delivering impactful web applications. Skilled in MERN stack, TypeScript/JavaScript, Python, and PHP, with hands-on experience building scalable products, APIs, and dashboards. Led and contributed to projects that improved startup efficiency and public-service workflows, with a strong focus on user-centered solutions, performance, and continuous learning.
+    }}
+\end{itemize}
+\vspace{-10pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {1337 Coding School}{Nov 2024 -- Oct 2026}
+      {Software Engineering / Full-Stack Development}{Morocco}
+      
+    \resumeSubheading
+      {UM6P}{Sep 2024 -- Oct 2026}
+      {Computer Software Engineering}{Morocco}
+      
+    \resumeSubheading
+      {OFPPT}{Jan 2022 -- Dec 2024}
+      {Full-Stack Web Development}{Morocco}
+
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Jelba.ma --- Hackathon Project}{Feb 2026 -- Feb 2026}
+      {Full-Stack Developer}{Morocco}
+      \resumeItemListStart
+        \resumeItem{Built a full-stack vaccine reminder platform in 3 days using React 19, TypeScript, FastAPI, and PostgreSQL.}
+        \resumeItem{Integrated ElevenLabs for Arabic AI voice reminders and Twilio for automated phone calls and SMS.}
+        \resumeItem{Implemented multilingual support (Arabic RTL, French, English) and an analytics dashboard with Leaflet and Recharts.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {AlloBaba}{Jun 2024 -- Jul 2024}
+      {Software Developer Intern}{Marrakesh-Safi, Morocco}
+      \resumeItemListStart
+        \resumeItem{Contributed to development and maintenance of startup web application features.}
+        \resumeItem{Collaborated on debugging, code quality improvements, testing, and feature optimization.}
+        \resumeItem{Worked in an agile startup workflow and supported production-focused delivery.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Wilaya of Marrakech-Safi Region}{Sep 2023 -- Nov 2023}
+      {Internship}{Marrakesh, Morocco}
+      \resumeItemListStart
+        \resumeItem{Supported humanitarian response operations after the Al Haouz earthquake.}
+        \resumeItem{Collected and documented critical data and coordinated with local authorities on emergency workflows.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{Jelba.ma} $|$ \emph{React 19, TypeScript, FastAPI, PostgreSQL, Twilio, ElevenLabs}}{2026}
+          \resumeItemListStart
+            \resumeItem{Built a full-stack vaccine reminder platform for Moroccan families to track children's vaccination schedules.}
+            \resumeItem{Implemented AI-powered Arabic voice reminders and SMS/phone notifications for engagement and follow-up.}
+            \resumeItem{Developed an admin dashboard with regional analytics and interactive maps for public-health monitoring.}
+          \resumeItemListEnd
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{Scrapy Platform} $|$ \emph{React, TypeScript, Electron, Python, FastAPI}}{2024}
+          \resumeItemListStart
+            \resumeItem{Built a web-scraping platform used to automate extraction from multiple public data sources.}
+            \resumeItem{Developed a web client and cross-platform desktop app for managing scraping jobs and outputs.}
+            \resumeItem{Implemented scalable Python microservices for data collection and processing workflows.}
+          \resumeItemListEnd
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{Kouralink} $|$ \emph{React, Node.js, Express, MongoDB}}{2024}
+          \resumeItemListStart
+            \resumeItem{Developed a social platform for football communities to create teams, organize matches, and run tournaments.}
+            \resumeItem{Implemented core full-stack features, team collaboration flows, and scalable data handling.}
+            \resumeItem{Delivered a user-friendly experience for players and team managers across devices.}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}: C, C++, Python, JavaScript, TypeScript, PHP \\
+     \textbf{Frameworks \& Libraries}: React.js, Next.js, Node.js, FastAPI, Laravel, Redux.js, Tailwind CSS \\
+     \textbf{Databases}: PostgreSQL, MongoDB, MySQL \\
+     \textbf{Tools \& Methodologies}: Git, GitFlow, Docker, Linux, Bash, REST APIs, Agile Development
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+%-----------LANGUAGES---------------
+\section{Languages}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+        Arabic (90\%) \quad | \quad English (90\%) \quad | \quad French (60\%) \quad | \quad Tamazight (10\%) 
+    }}
+\end{itemize}
+
+\end{document}
