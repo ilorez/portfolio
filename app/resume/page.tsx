@@ -1,23 +1,31 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft, Download, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowLeft, Download, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { education, experience, profile, skills, socials } from '@/data';
+import { education, experience, languages, profile, projects, skills, socials } from '@/data';
 
 export const metadata: Metadata = {
   title: `Resume | ${profile.first_name} ${profile.last_name}`,
   description: `Resume of ${profile.first_name} ${profile.last_name}`,
 };
 
-const topSkills = Array.from(
-  new Set(
-    Object.values(skills)
-      .flat()
-      .map((item) => item.name)
-  )
-).slice(0, 16);
+const linkedinUrl = socials.find((social) => social.id === 'linkedin')?.url;
+const professionalLinks = socials.filter(
+  (social) => social.id === 'linkedin' || social.id === 'github'
+);
 
-const socialLinks = socials.slice(0, 5);
+const coreTechnologyGroups = [
+  { label: 'Languages', items: ['C', 'C++', 'Python', 'JavaScript', 'TypeScript', 'PHP', 'Bash'] },
+  { label: 'Frameworks & Runtime', items: ['React.js', 'Next.js', 'Node.js', 'Laravel', 'MERN Stack'] },
+  { label: 'Systems & APIs', items: ['Linux', 'REST APIs'] },
+];
+
+const otherTechnologyGroups = [
+  { label: 'Libraries & Automation', items: ['Selenium', 'Tkinter', 'Redux.js', 'Firebase'] },
+  { label: 'Data & Security', items: ['Databases', 'JSON', 'Authorization', 'Secure Network Architecture'] },
+  { label: 'Workflow & Collaboration', items: ['Agile Development', 'Problem Solving', 'Team Collaboration'] },
+  { label: 'Professional Skills', items: ['Critical Thinking', 'Communication', 'Microsoft Excel'] },
+];
 
 export default function ResumePage() {
   return (
@@ -30,12 +38,29 @@ export default function ResumePage() {
               Back to Portfolio
             </Link>
           </Button>
-          <Button asChild className="ml-auto gap-2">
-            <a href={profile.resume} target="_blank" rel="noopener noreferrer">
-              <Download className="h-4 w-4" />
-              Download
+          <div className="ml-auto flex items-center gap-5 text-zinc-600 dark:text-zinc-300">
+            {linkedinUrl ? (
+              <a
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm hover:text-zinc-900 dark:hover:text-zinc-100"
+                aria-label="LinkedIn profile"
+              >
+                <Linkedin className="h-5 w-5 text-[#0a66c2]" />
+              </a>
+            ) : null}
+            <a
+              href={profile.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm hover:text-zinc-900 dark:hover:text-zinc-100"
+              aria-label="Download CV"
+            >
+              <Download className="h-5 w-5" />
+              <span>Download</span>
             </a>
-          </Button>
+          </div>
         </div>
 
         <article className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xl dark:border-zinc-800 dark:bg-zinc-950">
@@ -78,7 +103,7 @@ export default function ResumePage() {
 
               <section>
                 <h2 className="mb-3 text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-                  Links
+                  Professional Links
                 </h2>
                 <ul className="space-y-2 text-sm">
                   <li>
@@ -86,7 +111,7 @@ export default function ResumePage() {
                       Personal Website
                     </a>
                   </li>
-                  {socialLinks.map((social) => (
+                  {professionalLinks.map((social) => (
                     <li key={social.id}>
                       <a className="hover:underline" href={social.url} target="_blank" rel="noreferrer">
                         {social.name}
@@ -98,11 +123,41 @@ export default function ResumePage() {
 
               <section>
                 <h2 className="mb-3 text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-                  Core Skills
+                  Technical Skills
+                </h2>
+                <div className="space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
+                  <div>
+                    <h3 className="mb-1 font-semibold text-zinc-900 dark:text-zinc-100">Core Technologies</h3>
+                    <ul className="list-disc space-y-1 pl-5">
+                      {coreTechnologyGroups.map((group) => (
+                        <li key={group.label}>
+                          <span className="font-medium">{group.label}:</span> {group.items.join(', ')}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="mb-1 font-semibold text-zinc-900 dark:text-zinc-100">Other Technologies</h3>
+                    <ul className="list-disc space-y-1 pl-5">
+                      {otherTechnologyGroups.map((group) => (
+                        <li key={group.label}>
+                          <span className="font-medium">{group.label}:</span> {group.items.join(', ')}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="mb-3 text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+                  Languages
                 </h2>
                 <ul className="space-y-1 text-sm">
-                  {topSkills.map((skill) => (
-                    <li key={skill}>- {skill}</li>
+                  {languages.map((lang) => (
+                    <li key={lang.name}>
+                      - {lang.name} ({lang.level})
+                    </li>
                   ))}
                 </ul>
               </section>
@@ -138,6 +193,25 @@ export default function ResumePage() {
                           ))}
                         </ul>
                       ) : null}
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <section>
+                <h2 className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
+                  Projects
+                </h2>
+                <div className="space-y-5">
+                  {projects.slice(0, 3).map((project) => (
+                    <div key={project.slug} className="border-l-2 border-zinc-200 pl-4 dark:border-zinc-700">
+                      <div className="flex flex-wrap items-baseline justify-between gap-2">
+                        <h3 className="text-base font-semibold">{project.title}</h3>
+                        <p className="text-xs text-zinc-500">{project.tags?.slice(0, 4).join(', ')}</p>
+                      </div>
+                      <p className="mt-2 text-sm text-zinc-700 dark:text-zinc-300">
+                        {project.long_description ?? project.description}
+                      </p>
                     </div>
                   ))}
                 </div>
