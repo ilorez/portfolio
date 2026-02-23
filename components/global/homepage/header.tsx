@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { profile, socials } from '@/data';
 import { socialIconsMap } from '../Icons';
 import Link from 'next/link';
-import { Link2, Mouse, Handshake } from 'lucide-react';
+import { Link2, Handshake } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -172,7 +172,18 @@ export default function Header() {
         className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-muted-foreground"
         aria-hidden
       >
-        <Mouse className="h-8 w-8 animate-scroll-indicator" />
+        <video
+          className="h-12 w-12 object-contain motion-reduce:hidden"
+          width={48}
+          height={48}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+        >
+          <source src="/scroll_down_animation.webm" type="video/webm" />
+        </video>
       </div>
     </section>
   );
