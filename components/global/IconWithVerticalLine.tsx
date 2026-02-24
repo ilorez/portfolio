@@ -26,7 +26,6 @@ const THEME_LINE_CLASSES: Record<SectionTheme, string> = {
   contact:
     'bg-gradient-to-b from-sky-500/30 via-sky-500 to-sky-500/30 dark:from-sky-400/40 dark:via-sky-400 dark:to-sky-400/40',
 };
-
 const THEME_ICON_WRAPPER: Record<SectionTheme, string> = {
   about: 'bg-primary/10 dark:bg-primary/20 shadow-primary/20',
   experience: 'bg-amber-500/10 dark:bg-amber-500/20 shadow-amber-500/20',
@@ -67,7 +66,7 @@ const IconWithVerticalLine = ({
   const rootRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: rootRef,
-    offset: ['start 60%', 'end 50%'],
+    offset: ['start 65%', 'end 62%'],
   });
   const progress = useSpring(scrollYProgress, {
     stiffness: 120,
