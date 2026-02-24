@@ -42,7 +42,7 @@ export default function Home() {
                   items={items}
                   descriptionOverride={
                     section.id === 'contact'
-                      ? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Get in touch for collaborations or just a friendly hello.'
+                      ? "Have a project in mind, a collaboration idea, or just want to say hello? I'd love to hear from you and discuss how we can build something meaningful together."
                       : undefined
                   }
                 />

@@ -90,7 +90,7 @@
     \small \href{mailto:zobirnajdaoui@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{zobirnajdaoui@gmail.com}} ~
     \href{https://www.linkedin.com/in/ilorez/}{\raisebox{-0.2\height}\faLinkedin\ \underline{ilorez}}  ~
     \href{https://github.com/ilorez}{\raisebox{-0.2\height}\faGithub\ \underline{ilorez}} ~
-    \href{https://najdaoui.me}{\underline{najdaoui.me}} ~
+    \href{https://ilorez.dev}{\underline{ilorez.dev}} ~
     Morocco, Marrakech
     \vspace{-8pt}
 \end{center}
