@@ -4,7 +4,13 @@ import React, { useRef } from 'react';
 import Icon from './LucideIcon';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
 import { cn } from '@/lib/utils';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from 'framer-motion';
 
 export type SectionTheme = 'about' | 'experience' | 'primary' | 'work' | 'contact';
 
@@ -57,6 +63,7 @@ const IconWithVerticalLine = ({
   iconSize = 28,
   theme,
 }: IconWithVerticalLineProps) => {
+  const shouldReduceMotion = useReducedMotion();
   const rootRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: rootRef,
@@ -67,22 +74,43 @@ const IconWithVerticalLine = ({
     damping: 24,
     mass: 0.25,
   });
+  const iconY = useTransform(progress, [0, 0.5, 1], [3, -5, 3]);
+  const iconScale = useTransform(progress, [0, 0.5, 1], [0.97, 1.06, 0.97]);
+  const haloOpacity = useTransform(progress, [0, 0.35, 1], [0.2, 0.9, 0.3]);
 
   return (
     <div ref={rootRef} className="relative w-14 shrink-0 self-stretch min-h-0">
       <div className="relative flex flex-col items-center">
-        <div className="relative flex items-center justify-center shrink-0">
-          <div
+        <motion.div
+          className="relative flex items-center justify-center shrink-0"
+          style={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  y: iconY,
+                  scale: iconScale,
+                }
+          }
+          transition={{ type: 'spring', stiffness: 140, damping: 22, mass: 0.5 }}
+        >
+          <motion.div
             className={cn(
               'absolute inset-0 rounded-full scale-125 -z-10',
               THEME_ICON_WRAPPER[theme]
             )}
+            style={shouldReduceMotion ? undefined : { opacity: haloOpacity }}
+            animate={shouldReduceMotion ? undefined : { scale: [1.2, 1.3, 1.2] }}
+            transition={
+              shouldReduceMotion
+                ? undefined
+                : { duration: 2.8, ease: 'easeInOut', repeat: Infinity }
+            }
             aria-hidden
           />
           <div className={cn('relative', THEME_ICON_COLOR[theme])}>
             <Icon name={icon} size={iconSize} />
           </div>
-        </div>
+        </motion.div>
       </div>
       {/* Base line + scroll fill */}
       <div
