@@ -180,3 +180,51 @@
   background: hsl(var(--primary));
   z-index: -1;
 }
+
+@keyframes line-data-flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 48px;
+  }
+}
+
+@keyframes line-data-packet {
+  0% {
+    transform: translate(-50%, -20%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(-50%, 320%);
+    opacity: 0;
+  }
+}
+
+.line-data-flow {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 6px,
+    hsl(var(--foreground) / 0.12) 6px,
+    hsl(var(--foreground) / 0.12) 10px,
+    transparent 10px,
+    transparent 16px
+  );
+  background-size: 100% 24px;
+  animation: line-data-flow 1.8s linear infinite;
+}
+
+.line-data-packet {
+  animation: line-data-packet 2.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line-data-flow,
+  .line-data-packet {
+    animation: none;
+  }
+}

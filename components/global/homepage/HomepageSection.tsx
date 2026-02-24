@@ -3,6 +3,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import dynamicIconImports from 'lucide-react/dynamicIconImports';
+import { motion } from 'framer-motion';
 import CapitalizedText from '../CapitalizedText';
 import IconWithVerticalLine from '../IconWithVerticalLine';
 import Services from '../Services';
@@ -71,25 +72,38 @@ export default function HomepageSection({
       const text = descriptionOverride ?? profile.bio;
       return (
         <div className="flex flex-col gap-4 max-w-[800px]">
-          <p className="text-justify text-lg">
+          <motion.p
+            className="text-justify text-lg"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.55, ease: 'easeOut' }}
+          >
             I&apos;m{' '}
             <span className={cn('text-primary', thirdFont.className)}>
               {profile.first_name} {profile.last_name}
             </span>
             , {text}
-          </p>
+          </motion.p>
         </div>
       );
     }
 
     if (section.id === 'resume') {
       return (
-        <Button asChild variant="outline" size="lg" className="gap-2 w-fit">
-          <Link href="/resume" aria-label="Go to resume page">
-            <FileDown className="h-5 w-5" />
-            View / Download CV
-          </Link>
-        </Button>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.45, ease: 'easeOut' }}
+        >
+          <Button asChild variant="outline" size="lg" className="gap-2 w-fit">
+            <Link href="/resume" aria-label="Go to resume page">
+              <FileDown className="h-5 w-5" />
+              View / Download CV
+            </Link>
+          </Button>
+        </motion.div>
       );
     }
 
@@ -97,12 +111,31 @@ export default function HomepageSection({
       return (
         <div className="flex flex-col gap-6 max-w-[800px]">
           {descriptionOverride && (
-            <p className="text-justify text-lg text-muted-foreground">
+            <motion.p
+              className="text-justify text-lg text-muted-foreground"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+            >
               {descriptionOverride}
-            </p>
+            </motion.p>
           )}
-          <ContactCard />
-          <p className="text-sm text-muted-foreground">
+          <motion.div
+            initial={{ opacity: 0, x: 90, y: 10, filter: 'blur(8px)' }}
+            whileInView={{ opacity: 1, x: 0, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <ContactCard />
+          </motion.div>
+          <motion.p
+            className="text-sm text-muted-foreground"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.45, ease: 'easeOut', delay: 0.05 }}
+          >
             Or email directly:{' '}
             <a
               href={`mailto:${profile.email}`}
@@ -110,7 +143,7 @@ export default function HomepageSection({
             >
               {profile.email}
             </a>
-          </p>
+          </motion.p>
         </div>
       );
     }
@@ -118,7 +151,16 @@ export default function HomepageSection({
     if (!items) return null;
 
     if (section.cardType === 'skillCategory') {
-      return <SkillsBlock skills={items as SkillsByCategory} />;
+      return (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
+          <SkillsBlock skills={items as SkillsByCategory} />
+        </motion.div>
+      );
     }
 
     const list = Array.isArray(items) ? items : [];
@@ -129,7 +171,15 @@ export default function HomepageSection({
         return (
           <div className="flex flex-wrap w-full gap-2">
             {(list as Service[]).map((s, i) => (
-              <Services key={i} title={s.title} description={s.description} icon={s.icon as keyof typeof dynamicIconImports} />
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 22, x: i % 2 === 0 ? -18 : 18 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.45, ease: 'easeOut', delay: i * 0.05 }}
+              >
+                <Services title={s.title} description={s.description} icon={s.icon as keyof typeof dynamicIconImports} />
+              </motion.div>
             ))}
           </div>
         );
@@ -137,7 +187,15 @@ export default function HomepageSection({
         return (
           <div className="flex flex-wrap w-full gap-2">
             {(list as FunFactType[]).map((f, i) => (
-              <FunFacts key={i} text={f.text} icon={f.icon as keyof typeof dynamicIconImports} />
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20, x: i % 2 === 0 ? -12 : 12 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.45, ease: 'easeOut', delay: i * 0.04 }}
+              >
+                <FunFacts text={f.text} icon={f.icon as keyof typeof dynamicIconImports} />
+              </motion.div>
             ))}
           </div>
         );
@@ -145,7 +203,15 @@ export default function HomepageSection({
         return (
           <div className="flex flex-wrap w-full gap-2">
             {(list as Experience[]).map((e, i) => (
-              <ExperienceCard key={i} {...e} />
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 26, x: -16 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.06 }}
+              >
+                <ExperienceCard {...e} />
+              </motion.div>
             ))}
           </div>
         );
@@ -153,7 +219,15 @@ export default function HomepageSection({
         return (
           <div className="flex flex-wrap w-full gap-2">
             {(list as Education[]).map((e, i) => (
-              <EducationCard key={i} {...e} />
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 26, x: 16 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.06 }}
+              >
+                <EducationCard {...e} />
+              </motion.div>
             ))}
           </div>
         );
@@ -161,7 +235,15 @@ export default function HomepageSection({
         return (
           <div className="flex flex-wrap w-full gap-2">
             {(list as Project[]).map((p, i) => (
-              <ProjectCard key={i} {...p} />
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 28, x: i % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.55, ease: 'easeOut', delay: i * 0.07 }}
+              >
+                <ProjectCard {...p} />
+              </motion.div>
             ))}
           </div>
         );
@@ -169,7 +251,15 @@ export default function HomepageSection({
         return (
           <div className="flex flex-wrap w-full gap-2">
             {(list as Certification[]).map((c, i) => (
-              <CertificationCard key={i} {...c} />
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 22, x: i % 2 === 0 ? -14 : 14 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.45, ease: 'easeOut', delay: i * 0.05 }}
+              >
+                <CertificationCard {...c} />
+              </motion.div>
             ))}
           </div>
         );
