@@ -13,7 +13,7 @@ export interface Service {
 const Services = ({ title, description, icon }: Service) => (
   <Card
     className={cn(
-      'w-full max-w-sm rounded-xl border border-border bg-card p-5',
+      'w-full max-w-sm rounded-xl border border-border bg-card p-4 md:p-5',
       'shadow-sm transition-shadow hover:shadow-md',
       'text-left'
     )}

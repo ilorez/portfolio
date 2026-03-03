@@ -32,7 +32,7 @@ const ExperienceCard = ({
   <Link href={`/experience/${slug}`} className="block w-full max-w-xl group">
     <Card
       className={cn(
-        'w-full rounded-xl border border-border bg-card p-5',
+        'w-full rounded-xl border border-border bg-card p-4 md:p-5',
         'shadow-sm transition-all duration-200',
         'hover:shadow-md hover:border-primary/30',
         'text-left cursor-pointer'

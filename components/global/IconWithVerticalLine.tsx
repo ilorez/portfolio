@@ -78,7 +78,7 @@ const IconWithVerticalLine = ({
   const haloOpacity = useTransform(progress, [0, 0.35, 1], [0.2, 0.9, 0.3]);
 
   return (
-    <div ref={rootRef} className="relative w-14 shrink-0 self-stretch min-h-0">
+    <div ref={rootRef} className="relative w-10 md:w-14 shrink-0 self-stretch min-h-0">
       <div className="relative flex flex-col items-center">
         <motion.div
           className="relative flex items-center justify-center shrink-0"
@@ -111,14 +111,14 @@ const IconWithVerticalLine = ({
           </div>
         </motion.div>
       </div>
-      {/* Base line + scroll fill */}
+      {/* Base line + scroll fill — top matches icon column height (w-10 → 2.5rem, w-14 → 3.5rem) */}
       <div
-        className="absolute left-1/2 top-14 -translate-x-1/2 bottom-0 w-1 rounded-full min-h-[2rem] bg-muted/40"
+        className="absolute left-1/2 top-10 md:top-14 -translate-x-1/2 bottom-0 w-1 rounded-full min-h-[2rem] bg-muted/40"
         aria-hidden
       />
       <motion.div
         className={cn(
-          'absolute left-1/2 top-14 -translate-x-1/2 bottom-0 w-1 rounded-full min-h-[2rem] origin-top overflow-hidden',
+          'absolute left-1/2 top-10 md:top-14 -translate-x-1/2 bottom-0 w-1 rounded-full min-h-[2rem] origin-top overflow-hidden',
           THEME_LINE_CLASSES[theme]
         )}
         style={{ scaleY: progress }}

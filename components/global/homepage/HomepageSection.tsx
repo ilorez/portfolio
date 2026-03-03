@@ -71,7 +71,7 @@ export default function HomepageSection({
     if (section.id === 'about') {
       const text = descriptionOverride ?? profile.bio;
       return (
-        <div className="flex flex-col gap-4 max-w-[800px]">
+        <div className="flex flex-col gap-3 md:gap-4 max-w-[800px]">
           <motion.p
             className="text-justify text-lg"
             initial={{ opacity: 0, y: 24 }}
@@ -109,7 +109,7 @@ export default function HomepageSection({
 
     if (section.id === 'contact') {
       return (
-        <div className="flex flex-col gap-6 max-w-[800px]">
+        <div className="flex flex-col gap-4 md:gap-6 max-w-[800px]">
           {descriptionOverride && (
             <motion.p
               className="text-justify text-lg text-muted-foreground"
@@ -269,10 +269,10 @@ export default function HomepageSection({
   })();
 
   return (
-    <div className="flex flex-row gap-6 items-stretch min-h-0">
+    <div className="flex flex-row gap-3 md:gap-6 items-stretch min-h-0">
       <IconWithVerticalLine icon={iconName} iconSize={28} theme={section.theme} />
-      <div className="flex flex-col gap-5 min-w-0 flex-1 pb-1">
-        <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3 md:gap-5 min-w-0 flex-1 pb-1">
+        <div className="flex flex-col gap-1.5 md:gap-2">
           <CapitalizedText
             text={section.title}
             cap_color={titleCap}
