@@ -26,6 +26,7 @@ export const postBySlugQuery = groq`
       asset,
       caption
     },
+    contentMarkdown,
     content,
     publishedAt,
     readTime,

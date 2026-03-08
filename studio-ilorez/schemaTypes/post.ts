@@ -59,9 +59,17 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'contentMarkdown',
+      title: 'Content (Markdown)',
+      type: 'text',
+      rows: 20,
+      description: 'Write content in Markdown. Links work correctly: use [text](#anchor) for in-page anchors, [text](/path) for internal links, and [text](https://...) for external links. When set, this is used instead of the rich text editor below.',
+    }),
+    defineField({
       name: 'content',
-      title: 'Content',
+      title: 'Content (Rich text)',
       type: 'array',
+      description: 'Alternative to Markdown. Use when you prefer the visual editor.',
       of: [
         {
           type: 'block',
@@ -88,6 +96,7 @@ export default defineType({
                     name: 'href',
                     type: 'url',
                     title: 'URL',
+                    description: 'Use /path for internal links and #anchor for in-page anchors so they work correctly.',
                   },
                 ],
               },

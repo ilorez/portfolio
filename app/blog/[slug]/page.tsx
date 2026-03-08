@@ -8,6 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { thirdFont } from '@/app/fonts';
 import { PortableText, type PortableTextComponents } from '@portabletext/react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export const revalidate = 60;
 
@@ -27,6 +29,7 @@ interface SanityPost {
   excerpt: string;
   coverImage?: { asset: { _ref: string } };
   gallery?: GalleryImage[];
+  contentMarkdown?: string | null;
   content: any[];
   publishedAt: string;
   readTime?: string;
@@ -153,16 +156,35 @@ const portableTextComponents: PortableTextComponents = {
     code: ({ children }) => (
       <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">{children}</code>
     ),
-    link: ({ children, value }) => (
-      <a
-        href={value?.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-primary hover:underline"
-      >
-        {children}
-      </a>
-    ),
+    link: ({ children, value }) => {
+      const href = value?.href ?? '#';
+      const isInternal = href.startsWith('/');
+      const isAnchor = href.startsWith('#');
+      if (isInternal) {
+        return (
+          <Link href={href} className="text-primary hover:underline">
+            {children}
+          </Link>
+        );
+      }
+      if (isAnchor) {
+        return (
+          <a href={href} className="text-primary hover:underline">
+            {children}
+          </a>
+        );
+      }
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          {children}
+        </a>
+      );
+    },
   },
   list: {
     bullet: ({ children }) => <ul className="list-disc ml-6 mb-4 space-y-2">{children}</ul>,
@@ -173,6 +195,42 @@ const portableTextComponents: PortableTextComponents = {
     number: ({ children }) => <li className="text-muted-foreground">{children}</li>,
   },
 };
+
+function MarkdownLink({
+  href,
+  children,
+}: {
+  href?: string;
+  children?: React.ReactNode;
+}) {
+  const url = href ?? '#';
+  const isInternal = url.startsWith('/');
+  const isAnchor = url.startsWith('#');
+  if (isInternal) {
+    return (
+      <Link href={url} className="text-primary hover:underline">
+        {children}
+      </Link>
+    );
+  }
+  if (isAnchor) {
+    return (
+      <a href={url} className="text-primary hover:underline">
+        {children}
+      </a>
+    );
+  }
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-primary hover:underline"
+    >
+      {children}
+    </a>
+  );
+}
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
@@ -250,9 +308,48 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           )}
         </header>
 
-        <div className="border-t border-border pt-10">
-          {post.content && (
-            <PortableText value={post.content} components={portableTextComponents} />
+        <div className="border-t border-border pt-10 prose prose-invert max-w-none">
+          {post.contentMarkdown?.trim() ? (
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                a: ({ href, children }) => <MarkdownLink href={href}>{children}</MarkdownLink>,
+                h1: ({ children }) => (
+                  <h1 className="text-2xl font-bold text-foreground mt-8 mb-4">{children}</h1>
+                ),
+                h2: ({ children }) => (
+                  <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">{children}</h2>
+                ),
+                h3: ({ children }) => (
+                  <h3 className="text-lg font-semibold text-foreground mt-6 mb-3">{children}</h3>
+                ),
+                p: ({ children }) => (
+                  <p className="text-muted-foreground leading-relaxed mb-4">{children}</p>
+                ),
+                blockquote: ({ children }) => (
+                  <blockquote className="border-l-4 border-primary pl-4 my-6 italic text-muted-foreground">
+                    {children}
+                  </blockquote>
+                ),
+                ul: ({ children }) => <ul className="list-disc ml-6 mb-4 space-y-2">{children}</ul>,
+                ol: ({ children }) => <ol className="list-decimal ml-6 mb-4 space-y-2">{children}</ol>,
+                li: ({ children }) => <li className="text-muted-foreground">{children}</li>,
+                code: ({ children }) => (
+                  <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">
+                    {children}
+                  </code>
+                ),
+                pre: ({ children }) => (
+                  <pre className="my-4 p-4 rounded-lg bg-muted overflow-x-auto">{children}</pre>
+                ),
+              }}
+            >
+              {post.contentMarkdown}
+            </ReactMarkdown>
+          ) : (
+            post.content && (
+              <PortableText value={post.content} components={portableTextComponents} />
+            )
           )}
         </div>
 
