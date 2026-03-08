@@ -13,6 +13,15 @@ import remarkGfm from 'remark-gfm';
 
 export const revalidate = 60;
 
+/** Slugify heading text for id attributes so #anchor links work (markdown-style). */
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]/g, '');
+}
+
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -132,15 +141,33 @@ const portableTextComponents: PortableTextComponents = {
     ),
   },
   block: {
-    h1: ({ children }) => (
-      <h1 className="text-2xl font-bold text-foreground mt-8 mb-4">{children}</h1>
-    ),
-    h2: ({ children }) => (
-      <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">{children}</h2>
-    ),
-    h3: ({ children }) => (
-      <h3 className="text-lg font-semibold text-foreground mt-6 mb-3">{children}</h3>
-    ),
+    h1: ({ children, value }) => {
+      const text = (value as { children?: { text?: string }[] })?.children?.map((c) => c.text ?? '').join('') ?? '';
+      const id = text ? slugify(text) : undefined;
+      return (
+        <h1 id={id} className="text-2xl font-bold text-foreground mt-8 mb-4 scroll-mt-20">
+          {children}
+        </h1>
+      );
+    },
+    h2: ({ children, value }) => {
+      const text = (value as { children?: { text?: string }[] })?.children?.map((c) => c.text ?? '').join('') ?? '';
+      const id = text ? slugify(text) : undefined;
+      return (
+        <h2 id={id} className="text-xl font-semibold text-foreground mt-8 mb-4 scroll-mt-20">
+          {children}
+        </h2>
+      );
+    },
+    h3: ({ children, value }) => {
+      const text = (value as { children?: { text?: string }[] })?.children?.map((c) => c.text ?? '').join('') ?? '';
+      const id = text ? slugify(text) : undefined;
+      return (
+        <h3 id={id} className="text-lg font-semibold text-foreground mt-6 mb-3 scroll-mt-20">
+          {children}
+        </h3>
+      );
+    },
     normal: ({ children }) => (
       <p className="text-muted-foreground leading-relaxed mb-4">{children}</p>
     ),
@@ -314,15 +341,33 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               remarkPlugins={[remarkGfm]}
               components={{
                 a: ({ href, children }) => <MarkdownLink href={href}>{children}</MarkdownLink>,
-                h1: ({ children }) => (
-                  <h1 className="text-2xl font-bold text-foreground mt-8 mb-4">{children}</h1>
-                ),
-                h2: ({ children }) => (
-                  <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">{children}</h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className="text-lg font-semibold text-foreground mt-6 mb-3">{children}</h3>
-                ),
+                h1: ({ node, children }) => {
+                  const text = (node as { children?: { value?: string }[] })?.children?.map((c) => (c as { value?: string }).value ?? '').join('') ?? '';
+                  const id = text ? slugify(text) : undefined;
+                  return (
+                    <h1 id={id} className="text-2xl font-bold text-foreground mt-8 mb-4 scroll-mt-20">
+                      {children}
+                    </h1>
+                  );
+                },
+                h2: ({ node, children }) => {
+                  const text = (node as { children?: { value?: string }[] })?.children?.map((c) => (c as { value?: string }).value ?? '').join('') ?? '';
+                  const id = text ? slugify(text) : undefined;
+                  return (
+                    <h2 id={id} className="text-xl font-semibold text-foreground mt-8 mb-4 scroll-mt-20">
+                      {children}
+                    </h2>
+                  );
+                },
+                h3: ({ node, children }) => {
+                  const text = (node as { children?: { value?: string }[] })?.children?.map((c) => (c as { value?: string }).value ?? '').join('') ?? '';
+                  const id = text ? slugify(text) : undefined;
+                  return (
+                    <h3 id={id} className="text-lg font-semibold text-foreground mt-6 mb-3 scroll-mt-20">
+                      {children}
+                    </h3>
+                  );
+                },
                 p: ({ children }) => (
                   <p className="text-muted-foreground leading-relaxed mb-4">{children}</p>
                 ),

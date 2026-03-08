@@ -94,9 +94,9 @@ export default defineType({
                 fields: [
                   {
                     name: 'href',
-                    type: 'url',
-                    title: 'URL',
-                    description: 'Use /path for internal links and #anchor for in-page anchors so they work correctly.',
+                    type: 'string',
+                    title: 'URL or path',
+                    description: 'Full URL (https://...), internal path (/blog), or anchor (#section).',
                   },
                 ],
               },
